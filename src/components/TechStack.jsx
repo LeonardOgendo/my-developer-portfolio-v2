@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython,
   FaCodeBranch, FaBug, FaLock, FaLinux, FaNetworkWired, FaGitAlt, FaGithub, FaBootstrap, FaSkullCrossbones

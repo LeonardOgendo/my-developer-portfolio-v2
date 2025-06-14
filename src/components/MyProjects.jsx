@@ -1,3 +1,5 @@
+const images = import.meta.glob('../assets/certsxprojects/*.{png,jpg,jpeg}', { eager: true, import: 'default' });
+
 const projects = [
     {
       title: "Campus Emergency Response System",
@@ -63,7 +65,7 @@ const projects = [
           {projects.map((project, idx) => (
             <div key={idx} className="project-card">
                 <div className="card-image">
-                    <img src={`/images/${project.image}`} alt={project.title} className="project-image" />
+                    <img src={images[`../assets/certsxprojects/${project.image}`]} alt={project.title} className="project-image" />
                 </div>
                 <div className="card-content">
                   <div>

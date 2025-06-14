@@ -1,4 +1,4 @@
-import React from "react";
+const images = import.meta.glob('../assets/certsxprojects/*.{png,jpg,jpeg}',{ eager: true, import: 'default' });
 
 const certificates = [
   {
@@ -44,10 +44,10 @@ const MyCertificates = () => {
             {certificates.map((cert, index) => (
             <div className="cert-card" key={index}>
               <div>
-                <img src={`/images/${cert.image}`} className="cert-image" alt="cert-im" />
+                <img src={images[`../assets/certsxprojects/${cert.image}`]} className="cert-image" alt="cert-im" />
                 <h3>{cert.title}</h3>
                 <div className="issuer">
-                    <img className="cert-issuer-logo" src={`/images/${cert.issuerLogo}`} alt={cert.issuer} />
+                    <img className="cert-issuer-logo" src={images[`../assets/certsxprojects/${cert.issuerLogo}`]} alt={cert.issuer} />
                     <p className="cert-issuer">{cert.issuer}</p>
                 </div>
                 <span className="cert-date">{cert.date}</span>

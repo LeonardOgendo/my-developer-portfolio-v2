@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faCogs, faUser, faFileAlt, faPhone, faLaptopCode, faStar, faUserShield, faBars } from "@fortawesome/free-solid-svg-icons";
@@ -8,8 +7,8 @@ import TypewriterEffect from "./TypewriterEffect";
 function Navigation(){
     const texts = [
         "I Am Leonard Ogendo",
-        'I Am a Fullstack Developer',
-        'I Am a Cybersecurity Expert',
+        'I Am a Secure Software Engineer',
+        'I Am a Cybersecurity Engineer',
         'I Am a Penetration Tester'
     ]
 
@@ -71,7 +70,7 @@ function Navigation(){
         <nav id="home">
             <div className="video-background">
                 <video autoPlay muted loop id="background-video">
-                    <source src="/backgroundplay.mp4" type="video/mp4"/>
+                    <source src="/video/backgroundplay.mp4" type="video/mp4"/>
                 </video> 
                 <div className="gradient-overlay"></div>
                 
