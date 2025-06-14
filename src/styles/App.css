@@ -1,0 +1,10 @@
+.App
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.grey-body
+{
+    background: #333333;
+}
