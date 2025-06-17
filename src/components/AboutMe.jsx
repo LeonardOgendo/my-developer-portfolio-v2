@@ -13,7 +13,6 @@ function AboutMe(){
             return () => window.removeEventListener('resize', handleResize);
         }, []);
 
-
     return(
         <div className="section-body" id="about">
             <h2 className="about-me-title"><span style={{color: '#fff'}}>About</span> <span style={{color:'#fd4312'}}>Me</span></h2>

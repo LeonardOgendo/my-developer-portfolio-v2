@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faCogs, faUser, faFileAlt, faPhone, faLaptopCode, faStar, faUserShield, faBars } from "@fortawesome/free-solid-svg-icons";
 import TypewriterEffect from "./TypewriterEffect";
-import backgroundImage from "../assets/video/backgroundplay.mp4";
-
+import backgroundVideo from "../assets/video/backgroundplay.mp4";
+import backgroundImage from '../assets/backgrounds/box-rule3-bg.jpg';
 
 function Navigation(){
     const texts = [
@@ -13,90 +13,11 @@ function Navigation(){
         'I Am a Penetration Tester'
     ]
 
-    // For Responsiveness and dynamic display
-    const [isVisible, setIsVisible] = useState(true);
-    const [scrolled, setScrolled] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const isMobile = window.innerWidth <= 1024;
-
-            if (isMobile) {
-                setScrolled(scrollY >= 5);
-                setIsVisible(true);
-            } else {
-                setScrolled(false); // No scrolled feature on desktop
-                setIsVisible(scrollY <= 300);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 1024);
-        };
-    
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    
-
-
-
-    // Toggle menu
-    const [menuUp, setMenuUp] = useState(false);
-
-    const toggleMenu = () => {
-        setMenuUp(prev => !prev);
-    }
-    useEffect(() => {
-        if (menuUp) {
-            const timeoutId = setTimeout(() => {
-                setMenuUp(false);
-            }, 3500);
-    
-            return () => clearTimeout(timeoutId);         }
-    }, [menuUp]);
-    
     return(
-        <nav id="home">
-            <div className="video-background">
-                <video autoPlay muted loop id="background-video">
-                    <source src={backgroundImage} type="video/mp4"/>
-                </video> 
-                <div className="gradient-overlay"></div>
-                
-                <div className={scrolled ? "nav-brand scrolled-nav" : "nav-brand" } >
-                    <span id="name-pref"><a style={{ textDecoration: "none", color: "#fd4312" }} href="#home">Leon</a></span>
-                    {isVisible && <span id="hero-text"><FontAwesomeIcon icon={faUserShield} className="fa-hero-ico" />Developing and <span id="hero-text-span">Securing Systems</span></span>}
-                </div>
-                <div className="Developer-brf">
-                    <h1><span id="cont"><TypewriterEffect texts={texts} speed={100} pause={1500} /></span></h1>
-                </div>
-                <div className="header-btns">
-                    <a href="#projects"><button id="view-work-btn">View Work</button></a>
-                    <a href="#contact"><button id="hire-me-btn">Hire Me</button></a>
-                </div>
-
-                {!menuUp && (
-                    <div className="nav-toggler-container" onClick={toggleMenu}>
-                        <FontAwesomeIcon icon={faBars} id="fa-toggler" />
-                    </div>  
-                )}       
-                
-            </div>
-            
-            {(isMobile && menuUp) || !isMobile ? (
-                <div className={"nav-bar"}>
+        <section className="home-section" style={{ backgroundImage: `url(${backgroundImage})` }} id="home">
+            <nav>
+                <div className="nav-bar">
+                    <span id="nav-brand">Leonard Ogendo</span>
                     <ul>
                         <li>
                         <a href="#home" className="nav-link">
@@ -142,11 +63,21 @@ function Navigation(){
                         </li>
                         
                     </ul>
-                    
                 </div>
-            ): null}       
+            </nav>
 
-        </nav>
+            <div className="hero">
+                <div className="intro">
+                    <p>Software Egineer Portfolio</p>
+                </div>
+                <div className="typewriter-area">
+                    <video autoPlay muted loop playsInline>
+                        <source src={backgroundVideo} type="video/mp4" />
+                    </video>
+                    <div className="gradient-overlay"></div>
+                </div>
+            </div>
+    </section>
     )
 }
 
