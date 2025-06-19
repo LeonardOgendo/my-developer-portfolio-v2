@@ -65,16 +65,41 @@ function Navigation(){
                     </ul>
                 </div>
             </nav>
+            
+            <span className="se-tag">Software Egineer Portfolio</span>
 
             <div className="hero">
                 <div className="intro">
-                    <p>Software Egineer Portfolio</p>
+                    <p className="name">Leonard Ogendo</p>
+
+                    <p className="gen-title">Junior Secure Software & Cybersecurity Engineer</p>
+                    <p className="c-at">Currently Freelancing</p>
+
+                    <p className="zing">Helping Organizations Build Secure Systems and Protect Digital Assets.</p>
+                    
+                    <div className="hero-btns">
+                        <button>View My Work</button>
+                        <button>Get In Touch</button>
+                    </div>
                 </div>
-                <div className="typewriter-area">
-                    <video autoPlay muted loop playsInline>
-                        <source src={backgroundVideo} type="video/mp4" />
-                    </video>
-                    <div className="gradient-overlay"></div>
+                <div className="type-wrap">
+                    <div className="typewriter-area">
+                        <video autoPlay muted loop playsInline>
+                            <source src={backgroundVideo} type="video/mp4" />
+                        </video>
+                        <div className="typewriter">
+                            <TypewriterEffect texts={texts} />
+                        </div>
+                        <div className="gradient-overlay"></div>
+                        
+                    </div>
+                    <div className="expertise">
+                        <div className="hv-block">Software Engineering</div>
+                        <div className="hv-block">Web & Mobile App Security</div>
+                        <div className="hv-block">Penetration Testing</div>
+                        <div className="hv-block">Security Operations (SOC)</div>
+                        <div className="hv-block">Blue Teaming</div>
+                    </div>
                 </div>
             </div>
     </section>
