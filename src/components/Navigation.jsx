@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faCogs, faUser, faFileAlt, faPhone, faLaptopCode, faStar, faUserShield, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faCode, faCogs, faUser, faFileAlt, faPhone, faLaptopCode, faStar, faUserShield, faBars } from "@fortawesome/free-solid-svg-icons";
 import TypewriterEffect from "./TypewriterEffect";
 import backgroundVideo from "../assets/video/backgroundplay.mp4";
 import backgroundImage from '../assets/backgrounds/box-rule3-bg.jpg';
@@ -81,6 +81,10 @@ function Navigation(){
                         <button>View My Work</button>
                         <button>Get In Touch</button>
                     </div>
+
+                    <p className="hero-tech">
+                        Tech Stack:  <span id="f-span">Python</span> <span>JavaScript</span> <span>React</span> <span>Django</span> <span>Node.js</span> <span>+7 more</span>
+                    </p>
                 </div>
                 <div className="type-wrap">
                     <div className="typewriter-area">
