@@ -20,7 +20,7 @@ html {
   top: 0; left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.86);
   z-index: 1;
 }
 .home-section > * {
@@ -205,125 +205,44 @@ a:visited {
 }
 
 
+/*-- General section styles --*/
 
+.section-body {
+  margin: 1.2rem 2rem 0 2rem;
+}
 
 
 /*-- AboutMe --*/
 #about {
-  margin-top: 60px;
-}
-.about-me-title
-{
-    text-align: center;
-    font-size: 2.15rem;
-    margin-bottom: 15px;
-}
-.about-me-p
-{
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-.about--flexbox
-{
-    display: flex;
-    margin-top: 70px;
-}
-#profile
-{
-    width: 85%;
-    filter: grayscale(100%);
-    border: 2px solid #777;
-    padding: 10px;
-    margin-left: 20px;
-}
-.box1, .box2
-{
-    flex-basis: 50%;
-}
-.box2
-{
-    margin-top: 15px;
-}
-.box2 >p
-{
-    text-align: left;
-    color: #fff;
-    margin-bottom: 30px;
-    font-size: 14px;
-    margin-top: 15px;
-    letter-spacing: 1px;
-}
-#about--hello
-{
-    color: #fff;
-    font-weight: bold;
-    font-size: 25px;
-}
-#about--name
-{
-    color: #fd4312;
-    font-weight: bold;
-    font-size: 25px;
-}
-.about--details
-{
-    display: flex;
-}
-.det-1
-{
-    margin-right: 60px;
-}
-.dets
-{
-    display: inline-block;
-    color: #fff;
-    letter-spacing: 1px;
-    font-size: 13px;
-    margin-bottom: 25px;
-    font-weight: bold;
-}
-.dets2
-{
-    display: inline-block;
-    color: #fff;
-    letter-spacing: 1px;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-#cv-download-btn
-{
-    background: #fd4312;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 20px;
-    border: none;
-    letter-spacing: 1px;
-    margin-top: 30px;
-}
-#about--brief::after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background-color: #fd4312;
-    left: 45%;
-    margin-top: 40px;
-}
-#linkedin-btn {
-  text-decoration: none;
-  color: #1c1c1c;
-  background: #c2c2c2;
-  padding: 4px 7px;
-  border-radius: 5px;
-  font-size: 0.85rem;
-  box-shadow: 0 0 4px 1px #f2f2f2;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.86);
 }
 
-#linkedin-btn:hover {
-  color: #fd4312;
+.about-container {
+  background: #000;
+  height: 70vh;
+  padding: 0 10%;
 }
+
+.about-content-wrapper {
+  display: flex;
+  border: 1px solid #777;
+  padding: 0.9rem;
+  gap: 2rem;;
+}
+.profile-photo img {
+  width: 320px;;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 7px;
+  filter: grayscale(50%);
+  transform: rotate(-8deg);
+}
+.readme p {
+  color: #fff;
+}
+
+
 
 /*-- Skills -- */
 
