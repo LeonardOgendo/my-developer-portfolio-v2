@@ -208,40 +208,52 @@ a:visited {
 /*-- General section styles --*/
 
 .section-body {
-  margin: 1.2rem 2rem 0 2rem;
+  padding: 1.2rem 2rem 0 2rem;
 }
 
 
 /*-- AboutMe --*/
 #about {
   height: auto;
-  background-color: rgba(0, 0, 0, 0.86);
 }
 
 .about-container {
-  background: #000;
   height: 70vh;
-  padding: 0 10%;
 }
 
 .about-content-wrapper {
   display: flex;
-  border: 1px solid #777;
-  padding: 0.9rem;
-  gap: 2rem;;
+  padding-top: 2.5rem;
 }
-.profile-photo img {
-  width: 320px;;
+.photo-container {
+  flex-basis: 50%;
+  position: relative;
+}
+.photo-container img {
+  width: 100%;
   height: 400px;
-  object-fit: cover;
   border-radius: 7px;
-  filter: grayscale(50%);
-  transform: rotate(-8deg);
+  opacity: 0.3;
+}
+.work-st {
+  color: #fff;
+  position: absolute;
+  top: 3%;
+  left: 30%;
+  font-weight: bold;
+}
+.readme {
+  margin-top: 1.5rem;
+  flex-basis: 50%;
 }
 .readme p {
   color: #fff;
+  width: 75%;
 }
 
+.pro-title {
+  margin-bottom: 1.7rem;
+}
 
 
 /*-- Skills -- */
@@ -316,9 +328,7 @@ a:visited {
     transition: background-color 0.3s ease;
     font-weight: 500;
     border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-
-    
+    border-top-right-radius: 8px;    
   }
   
   .tab-button:hover {
