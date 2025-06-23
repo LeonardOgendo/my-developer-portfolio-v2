@@ -224,6 +224,7 @@ a:visited {
 .about-content-wrapper {
   display: flex;
   padding-top: 2.5rem;
+  position: relative;
 }
 .photo-container {
   flex-basis: 50%;
@@ -241,19 +242,94 @@ a:visited {
   top: 3%;
   left: 30%;
   font-weight: bold;
+  z-index: 5;
+  letter-spacing: 0.5px;
 }
 .readme {
   margin-top: 1.5rem;
   flex-basis: 50%;
 }
 .readme p {
-  color: #fff;
-  width: 75%;
+  width: 77%;
 }
-
+.pro-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
 .pro-title {
   margin-bottom: 1.7rem;
+  color: #555;
 }
+.pro-desc {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0.4px;
+}
+
+#underline {
+  height: 3px;
+  background: #c2c2c2;
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+/*--TopPerformer Card--*/
+.top-performer-card {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1e1e2f;
+  color: #fcd34d;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 12px rgba(252, 211, 77, 0.4);
+  animation: fadeHoldGlow 7s ease-in-out infinite;
+  opacity: 0.1; /* initial */
+}
+
+.star-icon {
+  color: #fcd34d;
+}
+
+/* Keyframes that hold glow for 3s before fading out */
+@keyframes fadeHoldGlow {
+  0% {
+    opacity: 0.1;
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+  10% {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(252, 211, 77, 0.6);
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.9; /* hold for a while */
+    box-shadow: 0 0 10px rgba(252, 211, 77, 0.6);
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0.1;
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.1;
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+}
+
+
 
 
 /*-- Skills -- */

@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import profilePhoto from '../assets/portfolio-user.png';
-import backgroundImage from '../assets/backgrounds/box-rule3-bg.jpg';
-
+import TopPerformerCard from "../shared/components/TopPerformerCard";
 
 const AboutMe = () => {
     return (
         <div id="about" className="section-body">
             <div className="about-container">
-                <h2>About Me</h2>
                 
                 <div className="about-content-wrapper">
+                    <TopPerformerCard />
                     <div className="photo-container">
                         <span className="work-st">Freelancer</span>
                         <img src={profilePhoto} alt="profile" />
                     </div>
                     <div className="readme">
-                        <p>Leonard Ogendo</p>
+                        <div id="underline"></div>
+                        <p className="pro-name">Leonard Ogendo</p>
                         <p className="pro-title">Secure Software Engineer | Cybersecurity Specialist </p>
 
-                        <p>I’m a Junior Secure Software Engineer actively building deep expertise in Secure SDLC, Web & Mobile Application Security, 
+                        <p className="pro-desc">I’m a Junior Secure Software Engineer actively building deep expertise in Secure SDLC, Web & Mobile Application Security, 
                             and Cybersecurity Engineering — across Penetration Testing and Blue Team Operations (SOC).
                             With a strong command of Python and JavaScript, I build and secure modern applications — from the codebase to the cloud. 
                             My unique advantage lies in blending software engineering and security practices into one unified discipline, allowing me to design and implement 
