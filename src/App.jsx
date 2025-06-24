@@ -2,7 +2,7 @@ import './styles/App.css';
 import './styles/styles.css';
 import Navigation from "./components/Navigation";
 import AboutMe from "./components/AboutMe";
-import MyServices from "./components/MyServices";
+import TechnicalSkills from './components/Technical Skills';
 import TechStack from "./components/TechStack";
 import MyProjects from "./components/MyProjects";
 import MyCertificates from "./components/MyCertificates";
@@ -15,7 +15,7 @@ function App(){
             <Navigation />
             <div className="grey-body">
                 <AboutMe />
-                <MyServices />
+                <TechnicalSkills />
                 <TechStack />
                 <MyProjects />
                 <MyCertificates />

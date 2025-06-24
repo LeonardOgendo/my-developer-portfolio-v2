@@ -331,52 +331,61 @@ a:visited {
 
 
 
+/*--Technical Skills Section--*/
+#skills {
+  height: 100vh;
+}
 
-/*-- Skills -- */
-
-.services-grid {
+.skills-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    margin-top: 35px;
+    gap: 1rem;
+    margin-top: 2rem;
+    height: 80vh;
 }
 
-.service-card {
-    flex: 1 1 calc(33.333% - 2rem);
-    max-width: calc(33.333% - 2rem);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 10px 25px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    transition: transform 0.3s ease;
-    height: 160px;
+.skills-sidebar {
+    flex: 0 0 25%;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    border-color: #fd4312;
+.skills-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.service-icon {
-    font-size: 2rem;
-    margin-bottom: 5px;
-    color: #fd4312;
+.skills-tab {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.service-title {
-    font-size: 1rem;
-    margin-bottom: 10px;
+.skills-tab:hover,
+.skills-tab.active {
+    background-color: #fd4312;
+    color: #fff;
 }
 
-.service-desc {
-    font-size: 0.85rem;
-    color: #ccc;
+/* Main content area takes 80% */
+.skills-main {
+    flex: 1;
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 300px; /* Optional starting height */
 }
 
 
-/*-- Tech Stack section --*/
+
+/*-- Tech Stack section */
   
   .tab-wrapper {
     margin: 0 22px;
@@ -458,6 +467,7 @@ a:visited {
     font-size: 0.9rem;
   }
   
+*/
 
   /*-- MyProjects section --*/
   
@@ -633,7 +643,7 @@ a:visited {
     margin: 10px 0 5px 0;
   }
   
-  .skills-container {
+  .cert-skills-container {
     position: relative;
     border: 1px solid #777;
     border-radius: 5px;
