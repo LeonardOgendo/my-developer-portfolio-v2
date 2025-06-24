@@ -2,7 +2,7 @@ import './styles/App.css';
 import './styles/styles.css';
 import Navigation from "./components/Navigation";
 import AboutMe from "./components/AboutMe";
-import TechnicalSkills from './components/Technical Skills';
+import TechnicalSkills from './components/technical-skills/Technical Skills';
 import TechStack from "./components/TechStack";
 import MyProjects from "./components/MyProjects";
 import MyCertificates from "./components/MyCertificates";
