@@ -25,14 +25,20 @@ const CurrentRole = () => {
                 <div className="timeline-marker"></div>
                 <div className="timeline-activities">
                     <div className="activity-item">
-                        <h4>Developed core features in MERN stack</h4>
-                        <p>Collaborated with the engineering team to implement secure REST APIs and dynamic UIs using React and Express.js.</p>
+                        <h4>Delivered Full-Stack Web Solutions using Django & MERN</h4>
+                        <p>Developed and deployed secure, API-driven applications using Django REST Framework and Express.js. Built dynamic frontends with React, integrating features like authentication, dashboards, and admin panels.</p>
                     </div>
+
                     <div className="activity-item">
-                        <h4>Integrated DevOps tools</h4>
-                        <p>Worked with GitHub Actions to automate deployment pipelines and linting processes.</p>
+                        <h4>Implemented Scalable Architectures with Security in Focus</h4>
+                        <p>Designed backend architectures with modular structure, JWT authentication, and RBAC. Applied input validation, rate limiting, and HTTPS configurations to protect against common vulnerabilities.</p>
                     </div>
-                    {/* Add more activities as needed */}
+
+                    <div className="activity-item">
+                        <h4>Automated Deployments & Streamlined Workflows</h4>
+                        <p>Configured GitHub Actions for continuous integration and deployment. Reduced delivery time by automating tests, linting, and deploys across freelance projects using Docker, Heroku, and Netlify.</p>
+                    </div>
+
                 </div>
             </div>
         </div>

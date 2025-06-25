@@ -8,3 +8,10 @@
 {
     background: #111;
 }
+
+.full-screen-section {
+    min-height: 100vh;
+    scroll-margin-top: 0px;
+    box-sizing: border-box;
+    padding: 2rem;
+}
