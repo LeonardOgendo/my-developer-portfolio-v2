@@ -3,6 +3,14 @@ import SLanguages from "./categories/software/Languages";
 import Frameworks from "./categories/software/Frameworks";
 import DevSecOps from "./categories/software/DevSecOpsTools";
 import CloudPlatforms from "./categories/software/CloudPlatforms";
+import Databases from "./categories/software/Databases";
+import TestingTools from "./categories/software/TestingTools";
+import Cms from "./categories/software/Cms";
+import CLanguages from "./categories/cybersecurity/CLanguages";
+import OsAndTools from "./categories/cybersecurity/OsAndTools";
+import PenetrationTesting from "./categories/cybersecurity/PenTesting";
+import SecurityOperations from "./categories/cybersecurity/SecurityOperations";
+import ApplicationSecurity from "./categories/cybersecurity/ApplicationSecurity";
 
 const TechnicalSkills = () => {
 
@@ -73,6 +81,33 @@ const TechnicalSkills = () => {
                     )}
                     {activeTab === "software" && activeCategory === "Cloud Platforms" && (
                         <CloudPlatforms />
+                    )}
+                    {activeTab === "software" && activeCategory === "Databases" && (
+                        <Databases />
+                    )}
+                    {activeTab === "software" && activeCategory === "Testing Tools" && (
+                        <TestingTools />
+                    )}
+                    {activeTab === "software" && activeCategory === "CMS & Others" && (
+                        <Cms />
+                    )}
+
+                    {/* Cybersecurity */}
+
+                    {activeTab === "cyber" && activeCategory === "Languages" && (
+                        <CLanguages />
+                    )}
+                    {activeTab === "cyber" && activeCategory === "OS & Tools" && (
+                        <OsAndTools />
+                    )}
+                    {activeTab === "cyber" && activeCategory === "Penetration Testing/Ethical Hacking" && (
+                        <PenetrationTesting />
+                    )}
+                    {activeTab === "cyber" && activeCategory === "Security Operations (Blue Team)" && (
+                        <SecurityOperations />
+                    )}
+                    {activeTab === "cyber" && activeCategory === "Application Security" && (
+                        <ApplicationSecurity />
                     )}
 
                 </div>
