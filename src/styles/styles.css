@@ -488,93 +488,145 @@ a:visited {
   font-weight: 500;
 }
 
+/*-- Experiences --*/
+
+.experience-toggles {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.experience-toggle {
+  padding: 0.6rem 1.2rem;
+  background-color: #2a2a2a;
+  color: #ccc;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.experience-toggle:hover {
+  background-color: #fd4312;
+  color: #fff;
+}
+
+.experience-content {
+  margin-top: 1.5rem;
+  background-color: #1c1c1c;
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-height: 200px; /* placeholder height for now */
+}
+
+/* Current Role */
+
+.current-role {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background-color: #2F242C;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+}
+
+.role-info {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.job-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 650;
+  color: #fd4312;
+}
+
+.company-location {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.company-location span,
+.role-duration span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.role-duration {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.role-months {
+  color: #fd4312;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.role-timeline {
+  display: flex;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #444;
+}
+
+.timeline-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.activity-item {
+  position: relative;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  left: -2.3rem;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  background-color: #fd4312;
+  border-radius: 50%;
+}
+
+.activity-item h4 {
+  color: #fff;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.activity-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
 
 
-
-
-/*-- Tech Stack section */
-  
-  .tab-wrapper {
-    margin: 0 22px;
-    border: 1px solid #fd4312;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #222;
-    margin-top: 40px;
-  }
-  
-  .tabs {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #333;
-    
-
-  }
-
-  .tab-button {
-    border:none;
-    padding: 0.7rem 1.2rem;
-    background-color: #333;
-    color: #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;    
-  }
-  
-  .tab-button:hover {
-    background-color: #444;
-
-  }
-  
-  .tab-button.active {
-    background-color: #222; 
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .tab-content {
-    background-color: #222;
-    padding: 1.5rem 1rem;
-  }
-  
-  
-  .tech-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-
-  .tech-card {
-    border: 1px solid #ccc;
-    padding: 14px 16px;
-    border-radius: 12px;
-    width: 110px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    background-color: #1c1c1c;
-  }
-  
-  .tech-card:hover {
-    transform: scale(1.05);
-    border-color: #fd4312;
-    border-bottom: none;
-  }
-  
-  .tech-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #fd4312;
-  }
-  
-  .tech-name {
-    color: #ccc;
-    font-size: 0.9rem;
-  }
-  
-*/
 
   /*-- MyProjects section --*/
   

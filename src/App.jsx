@@ -3,11 +3,12 @@ import './styles/styles.css';
 import Navigation from "./components/Navigation";
 import AboutMe from "./components/AboutMe";
 import TechnicalSkills from './components/technical-skills/Technical Skills';
-import TechStack from "./components/TechStack";
+import Experiences from './components/experiences/Experiences';
 import MyProjects from "./components/MyProjects";
 import MyCertificates from "./components/MyCertificates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
 
 function App(){
     return(
@@ -16,7 +17,7 @@ function App(){
             <div className="grey-body">
                 <AboutMe />
                 <TechnicalSkills />
-                <TechStack />
+                <Experiences />
                 <MyProjects />
                 <MyCertificates />
                 <Contact />
