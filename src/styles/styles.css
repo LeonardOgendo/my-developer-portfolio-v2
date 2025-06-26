@@ -518,21 +518,14 @@ a:visited {
 }
 
 .experience-content {
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   background-color: #1c1c1c;
-  padding: 1.5rem;
+  padding: 2.2rem 2.2rem;
   border-radius: 12px;
-  height: 70vh;
+  height: 68vh;
 }
 
 /* Current Role */
-
-.current-role {
-  width: 100%;
-  padding: 1rem;
-  background-color: #1c1c1c;
-  border-radius: 10px;
-}
 
 .role-header {
   display: flex;
@@ -635,8 +628,8 @@ a:visited {
 
 .previous-experience-wrapper {
     position: relative;
-    height: 80vh;
     overflow: hidden;
+    height: calc(68vh - 1.2rem);
 }
 
 .scroll-container {
@@ -656,9 +649,8 @@ a:visited {
 
 
 .experience-block {
-    height: 80vh;
+    height: inherit;
     scroll-snap-align: start;
-    padding: 2rem;
     box-sizing: border-box;
 }
 
