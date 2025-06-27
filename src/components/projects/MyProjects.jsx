@@ -1,5 +1,10 @@
 import { useState } from "react";
 import Cers from "./featured-projects/Cers";
+import AfricanaEcommerce from "./featured-projects/AfricanaEcommerce";
+import EhAcademy from "./featured-projects/EhAcademy";
+import MetaPredict from "./featured-projects/MetaPredict";
+import PaxfulClone from "./featured-projects/PaxfulClone";
+import TechConsultant from "./featured-projects/TechConsultant";
 
 const featuredProjects = [
   'Campus Emergency Response System',
@@ -49,8 +54,23 @@ const MyProjects = () => {
                 </div>
 
                 <div className="projects-main">
-                    {selectedProject && (
-                      <Cers />
+                    {selectedProject === 'Campus Emergency Response System' && (
+                        <Cers />
+                    )}
+                    {selectedProject === 'Africana Ecommerce Platform' && (
+                        <AfricanaEcommerce />
+                    )}
+                    {selectedProject === 'EH Academy Platform' && (
+                        <EhAcademy />
+                    )}
+                    {selectedProject === 'metaPredict' && (
+                        <MetaPredict />
+                    )}
+                    {selectedProject === 'Paxful Clone' && (
+                        <PaxfulClone />
+                    )}
+                    {selectedProject === 'Tech Consultant' && (
+                        <TechConsultant />
                     )}
                 </div>
             </div>
