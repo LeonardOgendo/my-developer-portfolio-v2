@@ -22,9 +22,14 @@ const Experiences = () => {
                 Roles I've held and experiences that have shaped my professional journey.
             </p>
 
-            <div className="experience-toggles">
-                <div onClick={() => handleToggleClick("current-role")} className="experience-toggle">Current Role</div>
-                <div onClick={() => handleToggleClick("previous-experiences")} className="experience-toggle">Previous Experiences</div>
+            <div className="experiences-hls">
+                <div className="experience-toggles">
+                    <div onClick={() => handleToggleClick("current-role")} className="experience-toggle">Current Role</div>
+                    <div onClick={() => handleToggleClick("previous-experiences")} className="experience-toggle">Previous Experiences</div>
+                </div>
+                <div className="experiences-count">
+                    5 + <br /> Experiences
+                </div> 
             </div>
 
             <div className="experience-content">

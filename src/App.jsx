@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 import AboutMe from "./components/AboutMe";
 import TechnicalSkills from './components/technical-skills/Technical Skills';
 import Experiences from './components/experiences/Experiences';
-import MyProjects from "./components/MyProjects";
+import MyProjects from './components/projects/MyProjects';
 import MyCertificates from "./components/MyCertificates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
