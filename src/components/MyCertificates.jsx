@@ -1,75 +1,92 @@
-const images = import.meta.glob('../assets/certsxprojects/*.{png,jpg,jpeg}',{ eager: true, import: 'default' });
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useRef } from 'react';
+import ecCouncilLogo from '../assets/certsxprojects/ec-council-logo.png';
+import certImg from '../assets/certsxprojects/csec-business.png';
 
-const certificates = [
-  {
-    title: "Learn-A-Thon 2025",
-    issuer: "Cisco",
-    issuerLogo: "cisco_logo.png",
-    date: "Feb 2025",
-    image: 'participation_netacad.png',
-    link: "https://www.credly.com/badges/4468d385-145e-405d-99fb-128d35af3f91/linked_in_profile", 
-    skills: ["Ethical Hacking", "Cybersecurity", "Penetration Testing"],
-  },
-  {
-    title: "Ethical Hacker",
-    issuer: "Cisco",
-    issuerLogo: "cisco_logo.png",
-    date: "Jan 2025",
-    image: 'cisco_eh_acad.jpg',
-    link: "https://www.credly.com/badges/89d6adaa-25a9-4475-9a93-a9b10acbc8b9/linked_in_profile",
-    skills: ["Ethical Hacking", "PenTesting", "Vulnerability Assessment", "Vulnerability Scanning", "Exploitation",
-      "Social Engineering", "Reporting"
-     ],
-  },
-  {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    issuerLogo: "freecodecamp_logo.png",
-    date: "Jul 2024",
-    image: 'freecode_web_cert.png',
-    link: "https://www.freecodecamp.org/certification/Leonard101/responsive-web-design", 
-    skills: ["Responsive Web Design", "JavaScript", "HTML5", "Frontend Development", "CSS3"],
-  },
-];
+const Certificates = () => {
+    const carouselRef = useRef(null);
 
-const MyCertificates = () => {
-  return (
-    <section className="section-body" id="certifications">
-        <h2 className="section-title"><span style={{ color: "#fff" }}>My</span> <span style={{color:'#fd4312'}}>Certificates</span></h2>
-        <p className="section-intro">
-          Each certification strengthens my skills for real-world Tech challenges ahead.
-        </p>
-      
-        <div className="cert-grid">
-            {certificates.map((cert, index) => (
-            <div className="cert-card" key={index}>
-              <div>
-                <img src={images[`../assets/certsxprojects/${cert.image}`]} className="cert-image" alt="cert-im" />
-                <h3>{cert.title}</h3>
-                <div className="issuer">
-                    <img className="cert-issuer-logo" src={images[`../assets/certsxprojects/${cert.issuerLogo}`]} alt={cert.issuer} />
-                    <p className="cert-issuer">{cert.issuer}</p>
+    const scrollLeft = () => {
+        const width = carouselRef.current.offsetWidth;
+        carouselRef.current.scrollBy({ left: -width, behavior: 'smooth' });
+    };
+
+    const scrollRight = () => {
+        const width = carouselRef.current.offsetWidth;
+        carouselRef.current.scrollBy({ left: width, behavior: 'smooth' });
+    };
+
+    return (
+        <section className="certificates-section" id="certificates">
+            <div className="certificates-top">
+                <div className="cert-info">
+                    <h2>Certificates</h2>
+                    <p>Software Engineering & Cybersecurity</p>
                 </div>
-                <span className="cert-date">{cert.date}</span>
-                <div className="skills-container">
-                  <ul className="skills">
-                    {cert.skills.map((skill, idx) => (
-                        <li key={idx}>{skill}</li>
-                    ))}
-                  </ul>
-                  <span id="skills-gained">Skills Gained</span>
+                <div className="cert-stats">
+                    <h3>Verified Credentials</h3>
+                    <p>7+ Certifications</p>
                 </div>
-              </div>
-              <div>
-                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="view-btn">
-                View Credential
-                </a>
-              </div>
             </div>
-            ))}
-        </div>
-    </section>
-  );
+
+            <div className="certificates-carousel-wrapper">
+                <button className="scroll-button left" onClick={scrollLeft}>
+                    <FaChevronLeft />
+                </button>
+
+                <div className="certificates-carousel" ref={carouselRef}>
+                    {/* CARD 1 */}
+                    <div className="cert-card">
+                        <div className="cert-card-left">
+                            <div className="org-name">
+                                <img src={ecCouncilLogo} alt="EC Council" />
+                                <span>EC-Council</span>
+                            </div>
+                            <h4 className="cert-title">Cybersecurity for Business</h4>
+                            <img src={certImg} alt="CEH Certificate" className="cert-image" />
+                        </div>
+
+                        <div className="cert-card-right">
+                            <h5>Skills Gained</h5>
+                            <div className="skills-tags">
+                                <span>Reconnaissance</span>
+                                <span>Network Security</span>
+                                <span>Vulnerability Analysis</span>
+                                <span>Ethical Hacking</span>
+                            </div>
+                            <button className="view-credential">View Credential</button>
+                        </div>
+                    </div>
+
+                    {/* CARD 2 */}
+                    <div className="cert-card">
+                        <div className="cert-card-left">
+                            <div className="org-name">
+                                <img src={ecCouncilLogo} alt="EC Council" />
+                                <span>EC-Council</span>
+                            </div>
+                            <h4 className="cert-title">Advanced Network Defense</h4>
+                            <img src={certImg} alt="Network Defense Certificate" className="cert-image" />
+                        </div>
+
+                        <div className="cert-card-right">
+                            <h5>Skills Gained</h5>
+                            <div className="skills-tags">
+                                <span>Firewall Hardening</span>
+                                <span>Secure Protocols</span>
+                                <span>Penetration Testing</span>
+                            </div>
+                            <button className="view-credential">View Credential</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button className="scroll-button right" onClick={scrollRight}>
+                    <FaChevronRight />
+                </button>
+            </div>
+        </section>
+    );
 };
 
-export default MyCertificates;
+export default Certificates;
