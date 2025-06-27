@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faCode, faCogs, faUser, faFileAlt, faPhone, faLaptopCode, faStar, faUserShield, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser, faFileAlt, faLaptopCode, faStar, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FaCode, FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaHandshake } from 'react-icons/fa';
+import { BsSend } from 'react-icons/bs';
+import { MdWorkOutline } from 'react-icons/md';
+
 import TypewriterEffect from "./TypewriterEffect";
 import backgroundVideo from "../assets/video/backgroundplay.mp4";
 import backgroundImage from '../assets/backgrounds/box-rule3-bg.jpg';
@@ -11,7 +14,7 @@ function Navigation(){
         'I Am a Secure Software Engineer',
         'I Am a Cybersecurity Engineer',
         'I Am a Penetration Tester'
-    ]
+    ];
 
     return(
         <section className="home-section" style={{ backgroundImage: `url(${backgroundImage})` }} id="home">
@@ -20,72 +23,76 @@ function Navigation(){
                     <span id="nav-brand">Leonard Ogendo</span>
                     <ul>
                         <li>
-                        <a href="#home" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faHome} className="fa-ico" /></div>
-                            <div className="name-box"><span>Home</span></div>
-                        </a>
+                            <a href="#home" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faHome} className="fa-ico" /></div>
+                                <div className="name-box"><span>Home</span></div>
+                            </a>
                         </li>
                         <li>
-                        <a href="#about" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faUser} id="fa-ico-about" className="fa-ico" /></div>
-                            <div className="name-box"><span>About</span></div>
-                        </a>
+                            <a href="#about" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faUser} className="fa-ico" /></div>
+                                <div className="name-box"><span>About</span></div>
+                            </a>
                         </li>
                         <li>
-                        <a href="#services" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faCogs} id="fa-ico-services" className="fa-ico" /></div>
-                            <div className="name-box"><span>Services</span></div>
-                        </a>
+                            <a href="#tech-stack" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faFileAlt} className="fa-ico" /></div>
+                                <div className="name-box"><span>Skills</span></div>
+                            </a>
                         </li>
                         <li>
-                        <a href="#tech-stack" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faFileAlt} id="fa-ico-resume" className="fa-ico" /></div>
-                            <div className="name-box"><span>Skills</span></div>
-                        </a>
+                            <a href="#projects" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faLaptopCode} className="fa-ico" /></div>
+                                <div className="name-box"><span>Projects</span></div>
+                            </a>
                         </li>
                         <li>
-                        <a href="#projects" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faLaptopCode} id="fa-ico-projects" className="fa-ico" /></div>
-                            <div className="name-box"><span>Projects</span></div>
-                        </a>
+                            <a href="#certifications" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faStar} className="fa-ico" /></div>
+                                <div className="name-box"><span>Certificates</span></div>
+                            </a>
                         </li>
                         <li>
-                        <a href="#certifications" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faStar} className="fa-ico" /></div>
-                            <div className="name-box"><span>Certificates</span></div>
-                        </a>
+                            <a href="#contact" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
+                                <div className="name-box"><span>Contact</span></div>
+                            </a>
                         </li>
-                        <li>
-                        <a href="#contact" className="nav-link">
-                            <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
-                            <div className="name-box"><span>Contact</span></div>
-                        </a>
-                        </li>
-                        
                     </ul>
                 </div>
             </nav>
-            
-            <span className="se-tag">Software Egineer Portfolio</span>
+
+            <span className="se-tag">Software Engineer Portfolio</span>
 
             <div className="hero">
                 <div className="intro">
                     <p className="name">Leonard Ogendo</p>
 
                     <p className="gen-title">Junior Secure Software & Cybersecurity Engineer</p>
-                    <p className="c-at">Currently Freelancing</p>
+                    
+                    <div className="status">
+                        <FaDotCircle className="status-dot" /> 
+                        <p className="c-at"> Currently Freelancing</p>
+                    </div>
 
                     <p className="zing">Helping Organizations Build Secure Systems and Protect Digital Assets.</p>
-                    
+
                     <div className="hero-btns">
-                        <button>View My Work</button>
-                        <button>Get In Touch</button>
+                        <button className="view-btn"><FaCode className="btn-icon" /> View My Work</button>
+                        <button className="contact-btn"><BsSend className="btn-icon" /> Get In Touch</button>
                     </div>
 
                     <p className="hero-tech">
-                        Tech Stack:  <span id="f-span">Python</span> <span>JavaScript</span> <span>React</span> <span>Django</span> <span>Node.js</span> <span>+7 more</span>
+                        <FaCode className="code-icon" /> Tech Stack:
+                        <span id="f-span">Python</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Django</span>
+                        <span>Node.js</span>
+                        <span>+7 more</span>
                     </p>
                 </div>
+
                 <div className="type-wrap">
                     <div className="typewriter-area">
                         <video autoPlay muted loop playsInline>
@@ -95,19 +102,34 @@ function Navigation(){
                             <TypewriterEffect texts={texts} />
                         </div>
                         <div className="gradient-overlay"></div>
-                        
                     </div>
+
                     <div className="expertise">
-                        <div className="hv-block">Software Engineering</div>
-                        <div className="hv-block">Web & Mobile App Security</div>
-                        <div className="hv-block">Penetration Testing</div>
-                        <div className="hv-block">Security Operations (SOC)</div>
-                        <div className="hv-block">Blue Teaming</div>
+                        <div className="hv-block">
+                            <FaSoftEng className="exp-ico" size={18} />
+                            <span>Software Engineering</span>
+                        </div>
+                        <div className="hv-block">
+                            <FaShieldAlt className="exp-ico" size={18} />
+                            <span>Web & App Security</span>
+                        </div>
+                        <div className="hv-block">
+                            <FaUserShield className="exp-ico" size={18} />
+                            <span>Penetration Testing</span>
+                        </div>
+                        <div className="hv-block">
+                            <FaTools className="exp-ico" size={18} />
+                            <span>Security Operations</span>
+                        </div>
+                        <div className="hv-block">
+                            <FaTerminal className="exp-ico" size={18} />
+                            <span>Blue Teaming</span>
+                        </div>
                     </div>
                 </div>
             </div>
-    </section>
-    )
+        </section>
+    );
 }
 
-export default Navigation
+export default Navigation;

@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import profilePhoto from '../assets/portfolio-user.png';
 import TopPerformerCard from "../shared/components/TopPerformerCard";
+import SecureCodeCard from "../shared/components/SecureCodeCard";
 
 const AboutMe = () => {
     return (
         <div id="about" className="section-body">
+           
             <div className="about-container">
-                
+                 <div className="vertical-line"></div>
                 <div className="about-content-wrapper">
                     <TopPerformerCard />
+                    <SecureCodeCard />
                     <div className="photo-container">
                         <span className="work-st">Freelancer</span>
                         <img src={profilePhoto} alt="profile" />

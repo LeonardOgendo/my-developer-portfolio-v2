@@ -28,7 +28,7 @@ const Contact = () => {
 
   return (
     <section className="contact-section" id="contact">
-      <h2><span style={{ color: '#fff' }}>Contact</span> <span style={{ color: '#fd4312' }}>Me</span></h2>
+      <h2><span style={{ color: '#fff' }}>Lets</span> <span style={{ color: '#fd4312' }}>Connect</span></h2>
 
       <div className="contact-row">
         <div className="contact-box1">

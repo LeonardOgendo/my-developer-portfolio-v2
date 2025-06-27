@@ -28,9 +28,17 @@ html {
   z-index: 2;
 }
 
+
+
 #nav-brand {
   color: #777;
   font-weight: 600;
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #fd4312, #f06595, #845ef7);
+   -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .nav-bar {
@@ -59,12 +67,13 @@ a:visited {
 
 .ico-box {
   margin-right: 5px;
+  color: #fd4312;
 }
 
 .se-tag{
-  color: #f2f2f2;
+  color: #c85737;
   margin-left: 2rem;
-  background-color: #9688ca;
+  background-color: #2F242C;
   padding: 3px 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -102,8 +111,19 @@ a:visited {
   font-weight: 450;
 }
 .c-at {
+  margin-top: 0.8rem;
   color: #777;
-  margin-top: 0.5rem;
+
+}
+
+.status {
+  display: flex;
+}
+
+.status-dot {
+  color: #845ef7;
+  margin-top: 0.89rem;
+  margin-right: 0.5rem;
 }
 
 .zing {
@@ -122,6 +142,8 @@ a:visited {
   border-radius: 5px;
   border: none;
   font-size: 1rem;
+  background: #2F242C;
+  color: #fff;
 }
 
 .hero-tech {
@@ -196,12 +218,23 @@ a:visited {
   border-top: none;
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
   color: #fff;
-  padding: 15px 5px 7px 7px;
+  padding: 7px 5px 7px 7px;
   border-radius: 0 0 5px 5px;
   font-size: 0.935rem;
+}
+
+.hv-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.exp-ico {
+  color: #fd4312;
 }
 
 
@@ -215,10 +248,23 @@ a:visited {
 /*-- AboutMe --*/
 #about {
   height: auto;
+  margin-bottom: 3rem;
+
 }
 
 .about-container {
   height: 70vh;
+  display: flex;
+}
+
+
+.vertical-line {
+  width: 15px;
+  background-color: #fd4312;
+  height: 90%;
+  margin-top: 1rem;
+  min-height: 150px;
+  margin-right: 1rem;
 }
 
 .about-content-wrapper {
@@ -297,6 +343,58 @@ a:visited {
 }
 
 .star-icon {
+  color: #fcd34d;
+}
+
+/* Keyframes that hold glow for 3s before fading out */
+@keyframes fadeHoldGlow {
+  0% {
+    opacity: 0.1;
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+  10% {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(252, 211, 77, 0.6);
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.9; /* hold for a while */
+    box-shadow: 0 0 10px rgba(252, 211, 77, 0.6);
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0.1;
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.1;
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+}
+
+/*--Secure Code Card--*/
+.secure-code-card {
+  position: absolute;
+  top: 75%;
+  left: 2%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1e1e2f;
+  color: #fcd34d;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 12px rgba(252, 211, 77, 0.4);
+  animation: fadeHoldGlow 7s ease-in-out infinite;
+  opacity: 0.1; /* initial */
+}
+
+.shield-icon {
   color: #fcd34d;
 }
 
@@ -1140,8 +1238,8 @@ a:visited {
 
   .contact-section {
     background: #1c1c1c;
-    margin: 0 auto;
-    padding: 30px 175px;
+    margin-top: 3rem;
+    padding: 1.5rem 2rem;
   }
   .contact-section >h2 {
     font-size: 2.15rem;
