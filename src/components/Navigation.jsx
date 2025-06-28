@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faUser, faFileAlt, faLaptopCode, faStar, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FaCode, FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaHandshake } from 'react-icons/fa';
@@ -16,10 +17,27 @@ function Navigation(){
         'I Am a Penetration Tester'
     ];
 
+    // State to track if the user has scrolled
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+            setScrolled(true);
+            } else {
+            setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+
     return(
         <section className="home-section" style={{ backgroundImage: `url(${backgroundImage})` }} id="home">
             <nav>
-                <div className="nav-bar">
+                <div className={`nav-bar ${scrolled ? 'scrolled' : ''}`}>
                     <span id="nav-brand">Leonard Ogendo</span>
                     <ul>
                         <li>

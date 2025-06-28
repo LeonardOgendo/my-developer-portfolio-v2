@@ -29,7 +29,6 @@ html {
 }
 
 
-
 #nav-brand {
   color: #777;
   font-weight: 600;
@@ -48,8 +47,54 @@ html {
   border: 1px solid #845ef7;
   padding: 20px 5px;
   border-radius: 7px 7px 7px 0;
+}
+
+nav {
+  z-index: 999;
+}
+
+.nav-bar {
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+
+.nav-bar.scrolled {
+  position: fixed;
+  border-radius: 7px;
+  padding: 24px 5px;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 95vw;
+  background: rgba(14, 14, 24, 0.92);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(132, 94, 247, 0.4);
+  z-index: 9999;
+  transition: all 0.3s ease-in-out, opacity 0.3s ease-in;
 
 }
+
+.typewriter-area {
+  z-index: 1;
+}
+
+.typewriter {
+  z-index: 2;
+}
+
+.gradient-overlay {
+  z-index: 0;
+}
+
+.hero {
+  z-index: 1;
+}
+
+
 
 .nav-bar ul li {
   display: inline-block;
@@ -72,14 +117,15 @@ a:visited {
 
 .se-tag{
   font-size: 0.85rem;
-  color: #fff;
-  border: 1px solid #845ef7;
+  color: #eee;
+  background-color: #845ef7;
   margin-left: 2rem;
   padding: 5px 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   display: inline-block;
   margin-top: 4px;
+  font-weight: 500;
 }
 
 .code-icon {
@@ -108,34 +154,51 @@ a:visited {
   font-weight: 600;
   color: #fff;
   margin-top: 5.5rem;
+  letter-spacing: 0.6px;
 }
 
 .gen-title {
   color:#777;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-top: 0.5rem;
   font-weight: 450;
+  letter-spacing: 0.5px;
 }
 .c-at {
   margin-top: 0.8rem;
-  color: #777;
+  color: #845ef7;
+  letter-spacing: 0.5px;
 
 }
 
 .status {
   display: flex;
+  width: 55%;
+  margin-top: 1rem;
+  padding-bottom: 0.85rem;
+  background-color: #222;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-left: 4px solid #845ef7;
 }
 
 .status-dot {
+  margin-top: 0.85rem;
   color: #845ef7;
-  margin-top: 0.89rem;
-  margin-right: 0.5rem;
+  margin-right: 0.2rem;
+  margin-left: 0.5rem;
 }
 
+
 .zing {
-  color: #777;
-  margin-top: 3.5rem;
-  font-size: 1.2rem;
+  color: #999;
+  margin-top: 3.2rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
 }
 
 .hero-btns {
@@ -243,6 +306,30 @@ a:visited {
 .exp-ico {
   color: #fd4312;
 }
+
+/*-- Test --*/
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #e6e6e6;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover .name-box span {
+  color: #fd4312;
+}
+
+.ico-box {
+  color: #fd4312;
+  font-size: 1.05rem;
+  margin-right: 6px;
+}
+
+.name-box span {
+  color: #ccc;
+}
+
+
 
 
 /*-- General section styles --*/
