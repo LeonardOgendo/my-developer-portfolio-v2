@@ -1,7 +1,10 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useRef } from 'react';
+
+
 import ecCouncilLogo from '../assets/certsxprojects/ec-council-logo.png';
 import certImg from '../assets/certsxprojects/csec-business.png';
+
 
 const Certificates = () => {
     const carouselRef = useRef(null);
@@ -20,8 +23,8 @@ const Certificates = () => {
         <section className="certificates-section" id="certificates">
             <div className="certificates-top">
                 <div className="cert-info">
-                    <h2>Certificates</h2>
-                    <p>Software Engineering & Cybersecurity</p>
+                    <h2 className='section-title'>Certificates</h2>
+                    <p className='section-subtitle'>Software Engineering & Cybersecurity</p>
                 </div>
                 <div className="cert-stats">
                     <h3>Verified Credentials</h3>
