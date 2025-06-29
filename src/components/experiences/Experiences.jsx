@@ -18,7 +18,7 @@ const Experiences = () => {
                 <span style={{ color: "#fd4312" }}>Experiences</span>
             </h2>
 
-            <p className="section-intro">
+            <p className="section-subtitle">
                 Roles I've held and experiences that have shaped my professional journey.
             </p>
 

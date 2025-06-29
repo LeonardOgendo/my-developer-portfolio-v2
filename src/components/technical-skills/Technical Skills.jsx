@@ -52,7 +52,7 @@ const TechnicalSkills = () => {
                 <span style={{ color: "#fff" }}>Technical</span>{" "}
                 <span style={{ color: "#fd4312" }}>Skills</span>
             </h2>
-            <p className="section-intro">
+            <p className="section-subtitle">
                 My proficiency in the following technologies and tools.
             </p>
 

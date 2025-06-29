@@ -27,8 +27,8 @@ const MyProjects = () => {
         <section className="section-body" id="projects">
             <div className="projects-top">
                 <div className="projects-left">
-                    <h2 className="projects-title">Projects</h2>
-                    <p className="projects-subtitle">Featured Projects</p>
+                    <h2 className="section-title">Projects</h2>
+                    <p className="section-subtitle">Featured Projects | Selected Highlights</p>
                 </div>
 
                 <div className="projects-right">
