@@ -119,16 +119,19 @@ const Certificates = () => {
               </div>
 
               <div className="cert-card-right">
-                <h5 className="cert-overview">Overview</h5>
-                <p className="overview-desc">{cert.overview}</p>
-                
-                <h5>Skills Gained</h5>
-                <div className="skills-tags">
-                  {cert.skills.map((skill, i) => (
-                    <span key={i}>{skill}</span>
-                  ))}
+                <div>
+                  <h4 className="cert-overview">Overview</h4>
+                  <p className="overview-desc">{cert.overview}</p>
+
+                  <h4>Skills Gained</h4>
+                  <div className="skills-tags">
+                    {cert.skills.map((skill, i) => (
+                      <span key={i}>{skill}</span>
+                    ))}
+                  </div>
                 </div>
-                <button className="view-credential">View Credential</button>
+                
+               <button className="view-credential">View Credential</button>
               </div>
             </div>
           ))}
