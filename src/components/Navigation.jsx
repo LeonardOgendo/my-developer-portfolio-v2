@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faUser, faFileAlt, faLaptopCode, faStar, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser, faFileAlt, faLaptopCode, faStar, faPhone, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
 import { FaCode, FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaHandshake } from 'react-icons/fa';
 import { BsSend } from 'react-icons/bs';
 import { MdWorkOutline } from 'react-icons/md';
@@ -38,42 +38,48 @@ function Navigation(){
         <section className="home-section" style={{ backgroundImage: `url(${backgroundImage})` }} id="home">
             <nav>
                 <div className={`nav-bar ${scrolled ? 'scrolled' : ''}`}>
-                    <span id="nav-brand">Leonard Ogendo</span>
+                    <a href="#home"><span id="nav-brand">Leonard Ogendo</span></a>
                     <ul>
                         <li>
                             <a href="#home" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faHome} className="fa-ico" /></div>
-                                <div className="name-box"><span>Home</span></div>
+                                <div className="name-box"><a href="#home"><span>Home</span></a></div>
                             </a>
                         </li>
                         <li>
                             <a href="#about" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faUser} className="fa-ico" /></div>
-                                <div className="name-box"><span>About</span></div>
+                                <div className="name-box"><a href="#about"><span>About</span></a></div>
                             </a>
                         </li>
                         <li>
                             <a href="#tech-stack" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faFileAlt} className="fa-ico" /></div>
-                                <div className="name-box"><span>Skills</span></div>
+                                <div className="name-box"><a href="#skills"><span>Skills</span></a></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tech-stack" className="nav-link">
+                                <div className="ico-box"><FontAwesomeIcon icon={faProjectDiagram} className="fa-ico" /></div>
+                                <div className="name-box"><a href="#experience"><span>Experience</span></a></div>
                             </a>
                         </li>
                         <li>
                             <a href="#projects" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faLaptopCode} className="fa-ico" /></div>
-                                <div className="name-box"><span>Projects</span></div>
+                                <div className="name-box"><a href="#projects"><span>Projects</span></a></div>
                             </a>
                         </li>
                         <li>
                             <a href="#certifications" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faStar} className="fa-ico" /></div>
-                                <div className="name-box"><span>Certificates</span></div>
+                                <div className="name-box"><a href="#certificates"><span>Certificates</span></a></div>
                             </a>
                         </li>
                         <li>
                             <a href="#contact" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
-                                <div className="name-box"><span>Contact</span></div>
+                                <div className="name-box"><a href="#contact"><span>Contact</span></a></div>
                             </a>
                         </li>
                     </ul>

@@ -38,6 +38,7 @@ const TechnicalSkills = () => {
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
+        setActiveCategory(sidebarItems[tab][0]);
     };
 
     const handleCategoryClick = (category) => {
@@ -59,8 +60,8 @@ const TechnicalSkills = () => {
             <div className="skills-container">
                 <div className="skills-sidebar">
                     <div className="skills-tabs">
-                        <button onClick={() => handleTabClick("software")} className="skills-tab">Software Engineering</button>
-                        <button onClick={() => handleTabClick("cyber")} className="skills-tab">Cybersecurity</button>
+                        <button onClick={() => handleTabClick("software")} className="skills-tab" style={ activeTab === "software" ? { backgroundColor: "#1e1e1e"} : {backgroundColor: "#2a2a2a"} } >Software Engineering</button>
+                        <button onClick={() => handleTabClick("cyber")} className="skills-tab" style={ activeTab === "cyber" ? { backgroundColor: "#1e1e1e"} : {backgroundColor: "#2a2a2a"} }>Cybersecurity</button>
                     </div>
                     <div className="skills-categories">
                         {sidebarItems[activeTab].map((item, index) => (
@@ -93,6 +94,9 @@ const TechnicalSkills = () => {
                     )}
 
                     {/* Cybersecurity */}
+                    {activeTab === "cyber" && activeCategory === "" && (
+                        <CLanguages />
+                    )}
 
                     {activeTab === "cyber" && activeCategory === "Languages" && (
                         <CLanguages />
