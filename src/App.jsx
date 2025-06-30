@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 import './styles/App.css';
 import './styles/styles.css';
@@ -13,12 +13,26 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
     const skillsRef = useRef(null);
     const experienceRef = useRef(null);
 
     useEffect(() => {
+        const handleResize = () => {
+            // Block screens smaller than 1024px (laptop size)
+            setIsSmallScreen(window.innerWidth < 1024);
+        };
+
+        handleResize(); // Run on first load
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
         const options = {
-            threshold: 0.6, // Trigger when 60% of the section is visible
+            threshold: 0.6,
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -37,6 +51,28 @@ function App() {
 
         return () => observer.disconnect();
     }, []);
+
+    if (isSmallScreen) {
+        return (
+            <div style={{
+                height: '100vh',
+                display: 'flex',
+                justifyContent: 'center',
+                paddingTop: '40%',
+                padding: '2rem',
+                textAlign: 'center',
+                backgroundColor: '#222',
+            }}>
+                <p style={{ fontSize: '1.5rem', maxWidth: '500px', color: '#fff' }}>
+                   This portfolio is Currently optimized for larger screens<br />
+                    <br />
+                   <hr />
+                   <br />
+                    Please view it on a laptop or desktop for the best experience.
+                </p>
+            </div>
+        );
+    }
 
     return (
         <div className="App">
