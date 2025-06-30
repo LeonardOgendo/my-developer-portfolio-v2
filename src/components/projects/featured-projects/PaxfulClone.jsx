@@ -1,5 +1,6 @@
 import projectImage from '../../../assets/certsxprojects/social-engineering.jpg';
-import { FaDotCircle } from 'react-icons/fa';
+import { FaDotCircle, FaProjectDiagram, FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const PaxfulClone = () => {
     return (
@@ -15,14 +16,21 @@ const PaxfulClone = () => {
             </div>
 
             <div className="tech-stack">
-                <span className="tech-badge">HTML</span>
-                <span className="tech-badge">CSS</span>
+                <span className="tech-badge">DTL</span>
+                <span className="tech-badge">Django</span>
                 <span className="tech-badge">JavaScript</span>
+                <span className="tech-badge">CSS3</span>
+                <span className="tech-badge">SQLite</span>
                 <span className="tech-badge">Netlify (Mock Hosting)</span>
+            </div>
+            
+             <div className="view-project">
+                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
+                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
             </div>
 
             <div className="project-section">
-                <h3>Overview</h3>
+                <h3><FaProjectDiagram className="overview-icon" /> Overview</h3>
                 <p>
                     This project involved cloning the Paxful authentication interface — including login and OTP pages — to simulate a phishing scenario for personal cybersecurity learning. It demonstrated how users could be tricked into submitting credentials, how responses could be silently captured, followed by fake error display and redirection to the real Paxful website. The project remained local and was never deployed online.
                 </p>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CurrentRole from "./categories/CurrentRole";
 import PreviousExperiences from "./categories/PreviousExperiences";
+import { FaStar } from "react-icons/fa";
 
 
 const Experiences = () => {
@@ -27,9 +28,9 @@ const Experiences = () => {
                     <div onClick={() => handleToggleClick("current-role")} className="experience-toggle">Current Role</div>
                     <div onClick={() => handleToggleClick("previous-experiences")} className="experience-toggle">Previous Experiences</div>
                 </div>
-                <div className="experiences-count">
-                    5 + <br /> Experiences
-                </div> 
+                
+                <div className="experiences-count"><FaStar className="exp-icon" />5 + Experiences</div>
+        
             </div>
 
             <div className="experience-content">

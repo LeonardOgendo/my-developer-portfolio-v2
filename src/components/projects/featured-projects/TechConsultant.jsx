@@ -1,5 +1,6 @@
 import projectImage from '../../../assets/certsxprojects/consultancy.png'; 
-import { FaDotCircle } from 'react-icons/fa';
+import { FaDotCircle, FaProjectDiagram, FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const TechConsultant = () => {
     return (
@@ -15,15 +16,19 @@ const TechConsultant = () => {
             </div>
 
             <div className="tech-stack">
-                <span className="tech-badge">React</span>
-                <span className="tech-badge">Tailwind CSS</span>
-                <span className="tech-badge">Framer Motion</span>
-                <span className="tech-badge">EmailJS</span>
-                <span className="tech-badge">Netlify</span>
+                <span className="tech-badge">SCSS</span>
+                <span className="tech-badge">JavaScript</span>
+                <span className="tech-badge">HTML5</span>
+                <span className="tech-badge">CSS3</span>
+            </div>
+
+             <div className="view-project">
+                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
+                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
             </div>
 
             <div className="project-section">
-                <h3>Overview</h3>
+                <h3><FaProjectDiagram className="overview-icon" /> Overview</h3>
                 <p>
                     The Tech Consultant platform was designed to serve as a modern digital presence for a tech advisory firm. It features interactive service listings, a sleek responsive UI, smooth scroll animations, client inquiry integration with EmailJS, and a conversion-optimized contact section. The project was delivered with scalability and future blog support in mind.
                 </p>

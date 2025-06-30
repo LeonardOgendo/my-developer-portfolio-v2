@@ -1,6 +1,6 @@
 import projectImage from '../../../assets/certsxprojects/ecommerce.png';
-import { FaDotCircle } from 'react-icons/fa';
-
+import { FaDotCircle, FaProjectDiagram, FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const AfricanaEcommerce = () => {
     return (
@@ -16,15 +16,19 @@ const AfricanaEcommerce = () => {
             </div>
 
             <div className="tech-stack">
-                <span className="tech-badge">Next.js</span>
-                <span className="tech-badge">React</span>
-                <span className="tech-badge">MongoDB</span>
-                <span className="tech-badge">Tailwind CSS</span>
-                <span className="tech-badge">Node.js</span>
+                <span className="tech-badge">DTL</span>
+                <span className="tech-badge">Django</span>
+                <span className="tech-badge">CSS3</span>
+                <span className="tech-badge">PostgreSQL</span>
+            </div>
+
+             <div className="view-project">
+                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
+                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
             </div>
 
             <div className="project-section">
-                <h3>Overview</h3>
+                <h3><FaProjectDiagram className="overview-icon" /> Overview</h3>
                 <p>
                     Africana is a full-stack ecommerce solution built to support African designers and artisans. It features secure product listings, payment integration, user authentication, cart functionality, order history, and a dynamic admin dashboard. The project was crafted to be both mobile-responsive and optimized for performance using server-side rendering with Next.js.
                 </p>

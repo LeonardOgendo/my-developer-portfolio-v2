@@ -1,6 +1,7 @@
 
 import projectImage from '../../../assets/certsxprojects/cers.png';
-import { FaDotCircle } from 'react-icons/fa';
+import { FaDotCircle, FaGithub, FaProjectDiagram, } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const Cers = () => {
     return (
@@ -8,7 +9,7 @@ const Cers = () => {
             <h2 className="fproject-title">Campus Emergency Response System (CERS)</h2>
 
             <div className="project-brief-container">
-                <p className="project-brief">A platform that connects students with campus emergency responders in real-time.</p>
+                <p className="project-brief">A platform that connects students with campus emergency responders <br /> in real-time.</p>
                 <div className="project-tags">
                     <span className="tag creation">Creation</span>
                     <span className="tag level">Advanced</span>
@@ -17,14 +18,19 @@ const Cers = () => {
 
             <div className="tech-stack">
                 <span className="tech-badge">React</span>
-                <span className="tech-badge">Node.js</span>
-                <span className="tech-badge">Express</span>
-                <span className="tech-badge">MongoDB</span>
-                <span className="tech-badge">Tailwind CSS</span>
+                <span className="tech-badge">DRF</span>
+                <span className="tech-badge">Django</span>
+                <span className="tech-badge">CSS3</span>
+                <span className="tech-badge">PostgreSQL</span>
+            </div>
+
+            <div className="view-project">
+                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
+                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
             </div>
 
             <div className="project-section">
-                <h3>Overview</h3>
+                <h3><FaProjectDiagram className="overview-icon" /> Overview</h3>
                 <p>
                     The Campus Emergency Response System (CERS) is a real-time platform designed to streamline emergency reporting within universities. It allows students to instantly alert campus security, track response times, and access location-based services for faster intervention. The system features a secure backend, user roles, real-time alert broadcasting, and scalable architecture to accommodate large student populations.
                 </p>

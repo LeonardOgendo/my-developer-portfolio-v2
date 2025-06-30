@@ -1,5 +1,6 @@
 import projectImage from '../../../assets/certsxprojects/elearning.png'; // Replace with actual image path
-import { FaDotCircle } from 'react-icons/fa';
+import { FaDotCircle, FaProjectDiagram, FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const EhAcademy = () => {
     return (
@@ -22,8 +23,13 @@ const EhAcademy = () => {
                 <span className="tech-badge">Tailwind CSS</span>
             </div>
 
+             <div className="view-project">
+                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
+                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
+            </div>
+
             <div className="project-section">
-                <h3>Overview</h3>
+                <h3><FaProjectDiagram className="overview-icon" /> Overview</h3>
                 <p>
                     EH Academy is a platform dedicated to delivering curated ethical hacking courses and structured learning paths. It includes course management tools, user authentication, and admin privileges to control course visibility, publish updates, and manage user progress. The project emphasizes secure delivery of learning materials, modular course structures, and future support for certifications and quizzes.
                 </p>
