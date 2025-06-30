@@ -23,14 +23,15 @@ const AfricanaEcommerce = () => {
             </div>
 
              <div className="view-project">
-                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
-                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
+                <a href="https://github.com/LeonardOgendo/Africana-Ecommerce" target="_blank" rel="noopener noreferrer" ><span className='view-code'><FaGithub className="view-icon" /> View Code</span></a> 
+                <span style={{ cursor: 'not-allowed' }} className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
             </div>
 
             <div className="project-section">
                 <h3><FaProjectDiagram className="overview-icon" /> Overview</h3>
                 <p>
-                    Africana is a full-stack ecommerce solution built to support African designers and artisans. It features secure product listings, payment integration, user authentication, cart functionality, order history, and a dynamic admin dashboard. The project was crafted to be both mobile-responsive and optimized for performance using server-side rendering with Next.js.
+                    Africana is a full-stack ecommerce solution built to support African designers and artisans. It features secure product listings, payment integration, user authentication, cart functionality, 
+                    order history, and a dynamic admin dashboard. The project was crafted to be both mobile-responsive and optimized for performance.
                 </p>
             </div>
 
@@ -43,22 +44,24 @@ const AfricanaEcommerce = () => {
                 <div className="features-grid">
                     <div className="feature-card"><FaDotCircle className="bullet-icon" /> Product catalog with filters</div>
                     <div className="feature-card"><FaDotCircle className="bullet-icon" /> Cart and checkout workflow</div>
-                    <div className="feature-card"><FaDotCircle className="bullet-icon" /> Stripe payment integration</div>
+                    <div className="feature-card"><FaDotCircle className="bullet-icon" /> M-Pesa & Stripe payment integration</div>
                     <div className="feature-card"><FaDotCircle className="bullet-icon" /> Admin dashboard with product management</div>
                 </div>
             </div>
 
             <div className="project-split">
-                <div className="split-box">
+               <div className="split-box">
                     <h4>Challenges</h4>
-                    <p><FaDotCircle className="bullet-icon" /> Managing protected routes across admin and user roles</p>
-                    <p><FaDotCircle className="bullet-icon" /> Handling real-time inventory updates</p>
+                    <p><FaDotCircle className="bullet-icon" /> Managing role-based access across admin and user interfaces</p>
+                    <p><FaDotCircle className="bullet-icon" /> Ensuring accurate inventory updates on checkout</p>
                 </div>
+
                 <div className="split-box">
                     <h4>Solutions</h4>
-                    <p><FaDotCircle className="bullet-icon" /> Used NextAuth for scalable role-based auth</p>
-                    <p><FaDotCircle className="bullet-icon" /> Implemented atomic update operations with Mongoose</p>
+                    <p><FaDotCircle className="bullet-icon" /> Used Django's built-in authentication with custom decorators for role-based view access</p>
+                    <p><FaDotCircle className="bullet-icon" /> Implemented atomic transactions using Django ORM and `F()` expressions</p>
                 </div>
+
             </div>
 
             <div className="project-status">

@@ -1079,9 +1079,12 @@ a:visited {
 
 .view-project {
   margin-top: 2rem;
-
-
 }
+
+.view-project a {
+  text-decoration: none;
+}
+
 .view-project span {
   font-size: 0.85rem;
 }
@@ -1098,7 +1101,6 @@ a:visited {
   background: #008080;
   padding: 0.4rem 0.4rem;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .overview-icon {

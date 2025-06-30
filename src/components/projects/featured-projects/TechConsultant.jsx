@@ -23,8 +23,8 @@ const TechConsultant = () => {
             </div>
 
              <div className="view-project">
-                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
-                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
+                <a href="https://github.com/LeonardOgendo/Tech-Consultancy-Website" target="_blank" rel="noopener noreferrer" ><span className='view-code'><FaGithub className="view-icon" /> View Code</span>  </a>
+                <a href="https://amden.co.ke/" target="_blank" rel="noopener noreferrer" ><span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span></a>
             </div>
 
             <div className="project-section">
@@ -56,7 +56,7 @@ const TechConsultant = () => {
                 </div>
                 <div className="split-box">
                     <h4>Solutions</h4>
-                    <p><FaDotCircle className="bullet-icon" /> Leveraged Tailwind and Framer Motion for quick yet stunning UI</p>
+                    <p><FaDotCircle className="bullet-icon" /> Leveraged Bootstrap for quick yet stunning UI</p>
                     <p><FaDotCircle className="bullet-icon" /> Mobile-first design and careful component responsiveness</p>
                 </div>
             </div>

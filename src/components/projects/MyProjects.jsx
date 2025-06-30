@@ -60,7 +60,7 @@ const MyProjects = () => {
         <div className="projects-right">
           <p className="projects-count">35+ <br /> GitHub Repos</p>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/LeonardOgendo/"
             target="_blank"
             rel="noopener noreferrer"
             className="github-button"

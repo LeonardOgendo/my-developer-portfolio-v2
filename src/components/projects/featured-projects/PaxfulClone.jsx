@@ -25,8 +25,8 @@ const PaxfulClone = () => {
             </div>
             
              <div className="view-project">
-                <span className='view-code'><FaGithub className="view-icon" /> View Code</span> 
-                <span className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
+                <a href="https://github.com/LeonardOgendo/PaxfulClone"><span className='view-code'><FaGithub className="view-icon" /> View Code</span> </a>
+                <span style={{ cursor: 'not-allowed' }} className='view-demo'><FiExternalLink className="view-icon" /> Live Demo</span>
             </div>
 
             <div className="project-section">
