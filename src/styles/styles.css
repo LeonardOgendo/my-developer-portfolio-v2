@@ -1177,10 +1177,20 @@ a:visited {
 
 .cert-title {
   font-size: 1rem;
-  margin-bottom: 0.8rem;
   color: #fff;
+  margin-left: 2.2rem;
+  border: 1px solid #845ef7;
+  background: rgba(14, 14, 24, 0.92);
+  display: inline-block;
+  padding: 0.3rem 0.6rem 0.5rem 0.6rem;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  margin-top: 0.5rem;
 }
 
+.cert-image-container {
+  position: relative;
+}
 .cert-image {
   width: 100%;
   height: auto;
@@ -1189,15 +1199,26 @@ a:visited {
   max-width: 100%;
 }
 
+.cert-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 14, 24, 0.6);
+  border-radius: 8px;
+}
+
 .cert-card-right {
-  flex-basis: 50%;
+  flex-basis: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+
 .cert-overview {
-  margin-top: 4.2rem;
+  margin-top: 4.7rem;
 }
 
 .cert-card-right h5 {
@@ -1238,18 +1259,40 @@ a:visited {
   background: #161616;
   color: #fd4312;
   border: none;
-  padding: 0.6rem;
+  padding: 0.6rem 0.7rem;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
 }
+.scroll-button:hover {
+  background: #fd4312;
+  color: #fff;
+}
 
 .scroll-button.left {
-  left: -10px;
+  left: -7px;
 }
 
 .scroll-button.right {
-  right: -10px;
+  right: -7px;
+}
+
+.glow-button {
+  animation: glowPulse 1.8s infinite ease-in-out;
+  box-shadow: 0 0 8px rgba(253, 67, 18, 0.6);
+}
+
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 6px rgba(253, 67, 18, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(253, 67, 18, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(253, 67, 18, 0.4);
+  }
 }
 
 /* Overrides */

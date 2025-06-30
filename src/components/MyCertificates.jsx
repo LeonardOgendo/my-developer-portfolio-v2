@@ -1,5 +1,5 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import ecCouncilLogo from '../assets/certsxprojects/ec-council-logo.png';
 import ciscoLogo from '../assets/certsxprojects/cisco-logo.png';
@@ -17,46 +17,61 @@ const certData = [
     'orgName': "EC-Council",
     'title': "Cybersecurity for Business",
     'certImg': ecCouncilCB,
-    'skills': ["Reconnaissance", "Network Security", "Vulnerability Analysis", "Ethical Hacking"],
-    'link': "#"
+    'overview': "Cybersecurity for Business by EC-Council equips professionals to protect small-medium businesses against Cyber threats through risk management, policy development, and incident response.",
+    'skills': ["Cybersecurity Awaraness", "Security Best Practices for Small-Medium Businesses", "Risk Assessment & Management", "Incident Response Planning",
+      "Business Continuity Planning", "Security Policy Development", "SMBs Cyber Threat Mitigation"
+    ],
+    'link': "https://learn.eccouncil.org/certificate/abfc6a0f-7b40-444f-ac1f-3b373f6f0aab?"
   },
   {
     'orgLogo': freeCodeLogo,
     'orgName': "freeCodeCamp",
     'title': "Front End Development Libraries",
     'certImg': freeCodeFdl,
-    'skills': ["Responsive Design", "JavaScript Libraries", "Front-End Frameworks"],
-    'link': "#"
-  },
-  {
-    'orgLogo': ciscoLogo,
-    'orgName': "Cisco",
-    'title': "Learn-A-Thon",
-    'certImg': netAcadP,
-    'skills': ["Ethical Hacking", "Network Security", "Vulnerability Analysis"],
-    'link': "#"
+    'overview': "Front End Development Libraries by freeCodeCamp demonstrates hands-on expertise in modern UI frameworks like React, Redux, Bootstrap, and Sass.",
+    'skills': ["Front-End Development", "JavaScript(ES6+)", "React", "Redux", "Bootstrap", "Sass"],
+    'link': "https://www.freecodecamp.org/certification/Leonard101/front-end-development-libraries"
   },
   {
     'orgLogo': ciscoLogo,
     'orgName': "Cisco",
     'title': "Ethical Hacker",
     'certImg': ciscoEH,
-    'skills': ["Network Security", "Cybersecurity Fundamentals", "Threat Analysis"],
-    'link': "#"
+    'overview': 'Ethical Hacker by Cisco validates practical skills in penetration testing, vulnerability assessment, and ethical hacking across networks, systems, and IoT environments.',
+    'skills': ["Ethical Hacking", "Penetration Testing", "Exploiting Networks", "Vulnerability Assessment", "Vulnerability Scanning", "IoT Security", "Reporting", "Social Engineering"],
+    'link': "https://www.credly.com/badges/89d6adaa-25a9-4475-9a93-a9b10acbc8b9/linked_in_profile"
   },
   {
     'orgLogo': freeCodeLogo,
     'orgName': "freeCodeCamp",
     'title': "Responsive Web Design",
     'certImg': freeCodeRWD,
-    'skills': ["Responsive Design", "JavaScript Libraries", "Front-End Frameworks"],
-    'link': "#"
+    'overview': "Responsive Web Design by freeCodeCamp showcases proficiency in building mobile-friendly websites using HTML5, CSS3, and basic JavaScript principles.",
+    'skills': ["Responsive Design", "HTML5", "CSS3", "JavaScipt"],
+    'link': "https://www.freecodecamp.org/certification/Leonard101/responsive-web-design"
   },
     
 ];
 
 const Certificates = () => {
   const carouselRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = carouselRef.current;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.offsetWidth < el.scrollWidth);
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = carouselRef.current;
+    el.addEventListener('scroll', checkScroll);
+    return () => {
+      el.removeEventListener('scroll', checkScroll);
+    };
+  }, []);
 
   const scrollLeft = () => {
     const width = carouselRef.current.offsetWidth;
@@ -82,9 +97,11 @@ const Certificates = () => {
       </div>
 
       <div className="certificates-carousel-wrapper">
-        <button className="scroll-button left" onClick={scrollLeft}>
-          <FaChevronLeft />
-        </button>
+        {canScrollLeft && (
+          <button className="scroll-button left glow-button" onClick={scrollLeft}>
+            <FaChevronLeft />
+          </button>
+        )}
 
         <div className="certificates-carousel" ref={carouselRef}>
           {certData.map((cert, index) => (
@@ -95,11 +112,16 @@ const Certificates = () => {
                   <span>{cert.orgName}</span>
                 </div>
                 <h4 className="cert-title">{cert.title}</h4>
-                <img src={cert.certImg} alt={`${cert.title} Certificate`} className="cert-image" />
+                <div className="cert-image-container">
+                  <img src={cert.certImg} alt={`${cert.title} Certificate`} className="cert-image" />
+                  <div className="cert-image-overlay"></div>
+                </div>
               </div>
 
               <div className="cert-card-right">
                 <h5 className="cert-overview">Overview</h5>
+                <p className="overview-desc">{cert.overview}</p>
+                
                 <h5>Skills Gained</h5>
                 <div className="skills-tags">
                   {cert.skills.map((skill, i) => (
@@ -112,9 +134,11 @@ const Certificates = () => {
           ))}
         </div>
 
-        <button className="scroll-button right" onClick={scrollRight}>
-          <FaChevronRight />
-        </button>
+        {canScrollRight && (
+          <button className="scroll-button right glow-button" onClick={scrollRight}>
+            <FaChevronRight />
+          </button>
+        )}
       </div>
     </section>
   );
