@@ -43,43 +43,43 @@ function Navigation(){
                         <li>
                             <a href="#home" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faHome} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#home"><span>Home</span></a></div>
+                                <div className="name-box"><span>Home</span></div>
                             </a>
                         </li>
                         <li>
                             <a href="#about" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faUser} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#about"><span>About</span></a></div>
+                                <div className="name-box"><span>About</span></div>
                             </a>
                         </li>
                         <li>
-                            <a href="#tech-stack" className="nav-link">
+                            <a href="#skills" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faFileAlt} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#skills"><span>Skills</span></a></div>
+                                <div className="name-box"><span>Skills</span></div>
                             </a>
                         </li>
                         <li>
-                            <a href="#tech-stack" className="nav-link">
+                            <a href="#experiences" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faProjectDiagram} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#experience"><span>Experience</span></a></div>
+                                <div className="name-box"><span>Experience</span></div>
                             </a>
                         </li>
                         <li>
                             <a href="#projects" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faLaptopCode} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#projects"><span>Projects</span></a></div>
+                                <div className="name-box"><span>Projects</span></div>
                             </a>
                         </li>
                         <li>
-                            <a href="#certifications" className="nav-link">
+                            <a href="#certificates" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faStar} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#certificates"><span>Certificates</span></a></div>
+                                <div className="name-box"><span>Certificates</span></div>
                             </a>
                         </li>
                         <li>
                             <a href="#contact" className="nav-link">
                                 <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
-                                <div className="name-box"><a href="#contact"><span>Contact</span></a></div>
+                                <div className="name-box"><span>Contact</span></div>
                             </a>
                         </li>
                     </ul>
