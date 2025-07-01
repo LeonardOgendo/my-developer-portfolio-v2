@@ -14,19 +14,18 @@ import Footer from "./components/Footer";
 
 function App() {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [recentlyNavigated, setRecentlyNavigated] = useState(false);
 
     const skillsRef = useRef(null);
     const experienceRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
-            // Block screens smaller than 1024px (laptop size)
             setIsSmallScreen(window.innerWidth < 1024);
         };
 
-        handleResize(); // Run on first load
+        handleResize();
         window.addEventListener('resize', handleResize);
-
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -36,6 +35,8 @@ function App() {
         };
 
         const observer = new IntersectionObserver((entries) => {
+            if (recentlyNavigated) return;
+
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.scrollIntoView({
@@ -50,6 +51,18 @@ function App() {
         if (experienceRef.current) observer.observe(experienceRef.current);
 
         return () => observer.disconnect();
+    }, [recentlyNavigated]);
+
+    // Detect anchor clicks
+    useEffect(() => {
+        const handleHashChange = () => {
+            setRecentlyNavigated(true);
+            // Re-enable after short delay
+            setTimeout(() => setRecentlyNavigated(false), 1000); // 1 second should be enough
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
     }, []);
 
     if (isSmallScreen) {
@@ -64,10 +77,10 @@ function App() {
                 backgroundColor: '#222',
             }}>
                 <p style={{ fontSize: '1.5rem', maxWidth: '500px', color: '#fff' }}>
-                   This portfolio is Currently optimized for larger screens<br />
+                    This portfolio is Currently optimized for larger screens<br />
                     <br />
-                   <hr />
-                   <br />
+                    <hr />
+                    <br />
                     Please view it on a laptop or desktop for the best experience.
                 </p>
             </div>
@@ -81,7 +94,7 @@ function App() {
                 <AboutMe />
 
                 <section
-                    id="technicalskills"
+                    id="skills"
                     ref={skillsRef}
                     className="full-screen-section"
                 >
@@ -104,5 +117,6 @@ function App() {
         </div>
     );
 }
+
 
 export default App;
