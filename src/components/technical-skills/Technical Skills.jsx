@@ -16,7 +16,60 @@ import PenetrationTesting from "./categories/cybersecurity/PenTesting";
 import SecurityOperations from "./categories/cybersecurity/SecurityOperations";
 import ApplicationSecurity from "./categories/cybersecurity/ApplicationSecurity";
 
+
 const TechnicalSkills = () => {
+    
+    const customStyles = {
+  control: (base) => ({
+    ...base,
+    backgroundColor: "#1c1c1c",
+    border: "1px solid #444",
+    borderRadius: "8px",
+    minHeight: "45px",
+    boxShadow: "none",
+    color: "#fff",
+  }),
+  menu: (base) => ({
+    ...base,
+    backgroundColor: "#2a2a2a",
+    borderRadius: "8px",
+    padding: "0.3rem",
+    zIndex: 10,
+  }),
+  option: (base, state) => ({
+    ...base,
+    backgroundColor: state.isFocused ? "#333" : "transparent",
+    color: "#fff",
+    cursor: "pointer",
+  }),
+  singleValue: (base) => ({
+    ...base,
+    color: "#fff",
+  }),
+  placeholder: (base) => ({
+    ...base,
+    color: "#bbb",
+  }),
+  input: (base) => ({
+    ...base,
+    color: "#fff",
+  }),
+  valueContainer: (base) => ({
+    ...base,
+    backgroundColor: "#1c1c1c",
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: "#fd4312",
+  }),
+  indicatorSeparator: () => ({
+    display: "none",
+  }),
+};
+
+
+
+
     const sidebarItems = {
         software: [
             { title: "Languages", icon: <FaCode />, intro: "Python, JavaScript, more" },
@@ -41,8 +94,8 @@ const TechnicalSkills = () => {
 
     const [selectedOption, setSelectedOption] = useState({
        label: (
-        <div className={`dropdown-option-wrapper color-0`}>
-            <div className="dropdown-option-icon">{sidebarItems[activeTab][0].icon}</div>
+        <div className="dropdown-option-wrapper" >
+            <div className="dropdown-option-icon color-0">{sidebarItems[activeTab][0].icon}</div>
             <div className="dropdown-option-label">
                 <div className="dropdown-option-title">{sidebarItems[activeTab][0].title}</div>
                 <div className="dropdown-option-intro">{sidebarItems[activeTab][0].intro}</div>
@@ -62,8 +115,8 @@ const TechnicalSkills = () => {
 
         setSelectedOption({
             label: (
-        <div className={`dropdown-option-wrapper color-0`}>
-            <div className="dropdown-option-icon">{firstTabCategory.icon}</div>
+        <div className="dropdown-option-wrapper">
+            <div className="dropdown-option-icon color-0">{firstTabCategory.icon}</div>
             <div className="dropdown-option-label">
                 <div className="dropdown-option-title">{firstTabCategory.title}</div>
                 <div className="dropdown-option-intro">{firstTabCategory.intro}</div>
@@ -81,8 +134,8 @@ const TechnicalSkills = () => {
     // ✅ Dropdown Options with JSX rendering
    const dropdownOptions = sidebarItems[activeTab].map((item, index) => ({
     label: (
-        <div className={`dropdown-option-wrapper color-${index % 4}`}>
-            <div className="dropdown-option-icon">{item.icon}</div>
+        <div className="dropdown-option-wrapper">
+            <div className={`dropdown-option-icon color-${index % 4}`}>{item.icon}</div>
             <div className="dropdown-option-label">
                 <div className="dropdown-option-title">{item.title}</div>
                 <div className="dropdown-option-intro">{item.intro}</div>
@@ -136,7 +189,7 @@ const TechnicalSkills = () => {
                             value={selectedOption}
                             onChange={handleDropdownChange}
                             isSearchable={false}
-                            classNamePrefix="custom-select"
+                            styles={customStyles}
         
                         />
                     </div>

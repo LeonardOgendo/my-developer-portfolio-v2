@@ -43,6 +43,54 @@ const featuredProjects = [
   },
 ];
 
+const customStyles = {
+  control: (base) => ({
+    ...base,
+    backgroundColor: "#1c1c1c",
+    border: "1px solid #444",
+    borderRadius: "8px",
+    minHeight: "45px",
+    boxShadow: "none",
+    color: "#fff",
+  }),
+  menu: (base) => ({
+    ...base,
+    backgroundColor: "#2a2a2a",
+    borderRadius: "8px",
+    padding: "0.3rem",
+    zIndex: 10,
+  }),
+  option: (base, state) => ({
+    ...base,
+    backgroundColor: state.isFocused ? "#333" : "transparent",
+    color: "#fff",
+    cursor: "pointer",
+  }),
+  singleValue: (base) => ({
+    ...base,
+    color: "#fff",
+  }),
+  placeholder: (base) => ({
+    ...base,
+    color: "#bbb",
+  }),
+  input: (base) => ({
+    ...base,
+    color: "#fff",
+  }),
+  valueContainer: (base) => ({
+    ...base,
+    backgroundColor: "#1c1c1c",
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: "#fd4312",
+  }),
+  indicatorSeparator: () => ({
+    display: "none",
+  }),
+};
+
 const projectComponents = {
   'Campus Emergency Response System': <Cers />,
   'Africana Ecommerce Platform': <AfricanaEcommerce />,
@@ -62,8 +110,8 @@ const MyProjects = () => {
   const selectOptions = featuredProjects.map((project, index) => ({
     value: project.title,
     label: (
-      <div className={`custom-option-wrapper color-${index % 4}`}>
-        <div className="custom-option-icon">{project.icon}</div>
+      <div className="custom-option-wrapper">
+        <div className={`custom-option-icon color-${index % 4}`}>{project.icon}</div>
         <div className="custom-option-text">
           <span className="custom-option-title">{project.title}</span>
           <span className="custom-option-intro">{project.intro}</span>
@@ -93,9 +141,10 @@ const MyProjects = () => {
         <div className="projects-mobile-dropdown">
           <Select
             options={selectOptions}
+            value={selectOptions.find(opt => opt.value === selectedProject)}
             onChange={(option) => handleProjectClick(option.value)}
             isSearchable={false}
-            classNamePrefix="custom-react-select"
+            styles={customStyles}
           />
         </div>
 
