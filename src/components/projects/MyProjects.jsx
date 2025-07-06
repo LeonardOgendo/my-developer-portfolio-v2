@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import Select from "react-select";
 import { FaGithub, FaAmbulance, FaShoppingCart, FaGraduationCap, FaChartLine, FaTools } from "react-icons/fa";
 
@@ -103,6 +103,8 @@ const projectComponents = {
 const MyProjects = () => {
   const [selectedProject, setSelectedProject] = useState('Campus Emergency Response System');
 
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 768px)").matches);
+
   const handleProjectClick = (projectTitle) => {
     setSelectedProject(projectTitle);
   };
@@ -120,16 +122,32 @@ const MyProjects = () => {
     )
   }));
 
+  useEffect(() => {
+          const mediaQuery = window.matchMedia("(max-width: 768px)");
+  
+          const handleMediaChange = (e) => {
+              setIsMobile(e.matches);
+          };
+  
+          // Set initial value
+          setIsMobile(mediaQuery.matches);
+  
+          // Listen to changes
+          mediaQuery.addEventListener("change", handleMediaChange);
+  
+          return () => mediaQuery.removeEventListener("change", handleMediaChange);
+      }, []);
+
   return (
     <section className="section-body" id="projects">
       <div className="projects-top">
         <div className="projects-left">
           <h2 className="section-title">Projects</h2>
-          <p className="section-subtitle">Featured Projects | Selected Highlights</p>
+          <p className="section-subtitle">{!isMobile ? "Featured Projects | Selected Highlights" : "Featured Projects"}</p>
         </div>
 
         <div className="projects-right">
-          <p className="projects-count">35+ <br /> GitHub Repos</p>
+          {!isMobile ? <p className="projects-count">35+ <br /> GitHub Repos</p> : <p className="projects-count">35+ Repos</p>}
           <a href="https://github.com/LeonardOgendo/" target="_blank" rel="noopener noreferrer" className="github-button">
             <FaGithub /> See GitHub
           </a>

@@ -1,17 +1,16 @@
-import { act, useState } from "react";
+import { useEffect, useState } from "react";
 import CurrentRole from "./categories/CurrentRole";
 import PreviousExperiences from "./categories/PreviousExperiences";
 import { FaStar } from "react-icons/fa";
 
 
 const Experiences = () => {
-
+    
     const [activeToggle, setActiveToggle] = useState("current-role");
 
     const handleToggleClick = (toggle) => {
         setActiveToggle(toggle);
     };
-
 
 
     return (
