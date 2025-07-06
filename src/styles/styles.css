@@ -1810,6 +1810,88 @@ a:visited {
   line-height: 1.2;
 }
 
+/* Hide dropdown on larger screens */
+.projects-mobile-dropdown {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+
+
+/* Projects dropdown */
+
+/* Custom dropdown styles */
+.custom-react-select__control {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  color: #fff;
+}
+
+.custom-react-select__menu {
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.custom-react-select__option {
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.custom-option-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.custom-option-icon {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.custom-option-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-option-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fd4312;
+}
+
+.custom-option-intro {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+.color-0 {
+  background-color: #fd4312;
+  color: #fff;
+}
+.color-1 {
+  background-color: #008080;
+  color: #fff;
+}
+.color-2 {
+  background-color: #fd4312;
+  color: #fff;
+}
+.color-3 {
+  background-color: #008080;
+  color: #fff;
+}
+
 
 
 /*-- Media Queries --*/
@@ -2264,4 +2346,574 @@ a:visited {
     font-size: 0.85rem;
   }
 }
+
+
+/* ===== Responsive: Experiences Section ===== */
+
+/* === Tablet and Below: 1024px === */
+@media (max-width: 1024px) {
+  #experiences {
+    height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .experiences-hls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-toggles {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .experience-toggle {
+    flex: 1;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .experiences-count {
+    align-self: flex-start;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .experience-content {
+    padding: 1.5rem 1rem;
+    height: auto;
+  }
+
+  .role-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .company-location {
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .role-duration {
+    text-align: left;
+    font-size: 0.8rem;
+  }
+
+  .role-months {
+    margin-top: 0.3rem;
+  }
+
+  .timeline-activities {
+    gap: 1.2rem;
+  }
+
+  .activity-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .activity-item p {
+    font-size: 0.85rem;
+  }
+
+  .scroll-buttons {
+    top: auto;
+    bottom: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .scroll-buttons button {
+    padding: 0.5rem 0.6rem;
+    font-size: 1rem;
+  }
+}
+
+/* === Mobile Devices Only: 640px === */
+@media (max-width: 640px) {
+  .previous-experience-wrapper {
+    height: 80vh;
+  }
+  .experience-block {
+    margin-bottom: 2rem;
+  }
+  .experience-toggle {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .experiences-count {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .role-header {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .job-title {
+    font-size: 1rem;
+  }
+
+  .activity-item h4 {
+    font-size: 0.9rem;
+  }
+
+  .activity-item p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .scroll-buttons {
+    gap: 0.8rem;
+  }
+
+  .scroll-buttons button {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* ===== Responsive: Projects Section ===== */
+
+/* Tablet: 641px–1024px */
+@media (max-width: 1024px) {
+  .projects-top {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .projects-body {
+    flex-direction: column;
+  }
+
+  .projects-sidebar {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .project-card {
+    flex: 1 1 48%;
+  }
+
+  .projects-main {
+    height: auto;
+    min-height: unset;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* Mobile: 640px and below */
+@media (max-width: 640px) {
+  .projects-top {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .projects-left {
+    text-align: left;
+  }
+
+  .projects-right {
+    text-align: left;
+  }
+
+  .projects-body {
+    flex-direction: column;
+  }
+
+  .projects-sidebar {
+    display: none; /* Hide original card sidebar */
+  }
+
+  .projects-main {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Only show dropdown on mobile */
+@media (max-width: 640px) {
+  .mobile-project-select {
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-project-select {
+    display: none;
+  }
+}
+
+/* ===== Responsive: Featured Projects Section ===== */
+
+@media (max-width: 1024px) {
+  .fproject-component {
+    padding: 1.2rem;
+  }
+
+  .project-brief-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .features-grid {
+    flex-direction: column;
+  }
+
+  .project-split {
+    flex-direction: column;
+  }
+
+  .feature-card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .fproject-title {
+    font-size: 1.5rem;
+  }
+
+  .project-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-brief {
+    font-size: 0.95rem;
+  }
+
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .view-project {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .view-project .view-code,
+  .view-project .view-demo {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .split-box h4 {
+    font-size: 1rem;
+  }
+
+  .split-box p {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ===== projects mobile dropdown ===== */
+
+/* Show only on mobile */
+@media screen and (max-width: 640px) {
+  .projects-mobile-dropdown {
+    display: block;
+  }
+
+  .projects-sidebar {
+    display: none !important;
+  }
+
+  .projects-main {
+    width: 100%;
+  }
+}
+
+
+/* ------------------------------
+   📱 Mobile Screens: Max 640px
+-------------------------------*/
+@media screen and (max-width: 640px) {
+  .certificates-section {
+    padding: 1rem;
+  }
+
+  .certificates-top {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+    gap: 1rem;
+  }
+
+  .cert-stats {
+    text-align: left;
+  }
+
+  .certificates-carousel {
+    height: auto;
+  }
+
+  .cert-card {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.2rem;
+    width: 100vw;
+  }
+
+  .cert-card-left,
+  .cert-card-right {
+    flex-basis: 100%;
+  }
+
+  .cert-title {
+    margin-left: 0;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .cert-image {
+    max-height: 40vh;
+  }
+
+  .skills-tags {
+    font-size: 0.75rem;
+    padding: 0.4rem;
+  }
+
+  .view-credential {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .scroll-button.left {
+    left: 6px;
+  }
+
+  .scroll-button.right {
+    right: 6px;
+  }
+}
+
+/* ------------------------------
+   💻 Tablet Screens: Max 1024px
+-------------------------------*/
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .certificates-section {
+    padding: 1.5rem;
+  }
+
+  .certificates-top {
+    flex-direction: row;
+    padding: 1.2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .certificates-carousel {
+    height: auto;
+  }
+
+  .cert-card {
+    gap: 1rem;
+    padding: 1rem;
+    flex-direction: row;
+  }
+
+  .cert-title {
+    font-size: 1rem;
+  }
+
+  .cert-image {
+    max-height: 45vh;
+  }
+
+  .skills-tags {
+    font-size: 0.78rem;
+  }
+
+  .view-credential {
+    font-size: 0.82rem;
+  }
+
+  .scroll-button.left {
+    left: 6px;
+  }
+
+  .scroll-button.right {
+    right: 6px;
+  }
+}
+
+
+/* Contact Section */
+
+/* ------------------------------
+   📱 Mobile Screens: Max 640px
+-------------------------------*/
+@media screen and (max-width: 640px) {
+  .contact-section {
+    padding: 1rem;
+  }
+
+  .contact-section > h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-box1,
+  .c-box2,
+  .contact-form {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .slider-container,
+  .slider-content1 img,
+  .slider-content2 img,
+  .slider-content3 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-overlay {
+    font-size: 0.8rem;
+    top: 60%;
+    left: 8%;
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .social > a {
+    margin: 0 6px;
+    font-size: 1.3rem;
+  }
+
+  .c-box2 {
+    gap: 1rem;
+  }
+
+  .network-card {
+    padding: 0.7rem 1rem;
+  }
+
+  .network-label {
+    font-size: 0.95rem;
+  }
+
+  .network-stats {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    margin-left: 2rem;
+  }
+
+  .contact-form {
+    gap: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+}
+
+/* ------------------------------
+   💻 Tablet Screens: Max 1024px
+-------------------------------*/
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .contact-section {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .contact-section > h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-box1,
+  .c-box2,
+  .contact-form {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .slider-container,
+  .slider-content1 img,
+  .slider-content2 img,
+  .slider-content3 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .social {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .social > a {
+    margin: 0 8px;
+    font-size: 1.25rem;
+  }
+
+  .c-box2 {
+    gap: 1.2rem;
+  }
+
+  .network-card {
+    padding: 0.8rem 1rem;
+  }
+
+  .network-label {
+    font-size: 1rem;
+  }
+
+  .network-stats {
+    font-size: 0.85rem;
+    margin-left: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
+
+
+
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Select from "react-select";
 import { FaGithub, FaAmbulance, FaShoppingCart, FaGraduationCap, FaChartLine, FaTools } from "react-icons/fa";
 
 import Cers from "./featured-projects/Cers";
@@ -8,6 +8,7 @@ import EhAcademy from "./featured-projects/EhAcademy";
 import MetaPredict from "./featured-projects/MetaPredict";
 import PaxfulClone from "./featured-projects/PaxfulClone";
 import TechConsultant from "./featured-projects/TechConsultant";
+
 
 const featuredProjects = [
   {
@@ -42,12 +43,34 @@ const featuredProjects = [
   },
 ];
 
+const projectComponents = {
+  'Campus Emergency Response System': <Cers />,
+  'Africana Ecommerce Platform': <AfricanaEcommerce />,
+  'EH Academy Platform': <EhAcademy />,
+  'metaPredict': <MetaPredict />,
+  'Paxful Clone': <PaxfulClone />,
+  'Tech Consultant': <TechConsultant />,
+};
+
 const MyProjects = () => {
   const [selectedProject, setSelectedProject] = useState('Campus Emergency Response System');
 
   const handleProjectClick = (projectTitle) => {
     setSelectedProject(projectTitle);
   };
+
+  const selectOptions = featuredProjects.map((project, index) => ({
+    value: project.title,
+    label: (
+      <div className={`custom-option-wrapper color-${index % 4}`}>
+        <div className="custom-option-icon">{project.icon}</div>
+        <div className="custom-option-text">
+          <span className="custom-option-title">{project.title}</span>
+          <span className="custom-option-intro">{project.intro}</span>
+        </div>
+      </div>
+    )
+  }));
 
   return (
     <section className="section-body" id="projects">
@@ -59,18 +82,24 @@ const MyProjects = () => {
 
         <div className="projects-right">
           <p className="projects-count">35+ <br /> GitHub Repos</p>
-          <a
-            href="https://github.com/LeonardOgendo/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="github-button"
-          >
+          <a href="https://github.com/LeonardOgendo/" target="_blank" rel="noopener noreferrer" className="github-button">
             <FaGithub /> See GitHub
           </a>
         </div>
       </div>
 
       <div className="projects-body">
+        {/* Mobile Dropdown */}
+        <div className="projects-mobile-dropdown">
+          <Select
+            options={selectOptions}
+            onChange={(option) => handleProjectClick(option.value)}
+            isSearchable={false}
+            classNamePrefix="custom-react-select"
+          />
+        </div>
+
+        {/* Sidebar for desktop/tablet */}
         <div className="projects-sidebar">
           {featuredProjects.map((project, index) => (
             <div className="project-card" key={index} onClick={() => handleProjectClick(project.title)}>
@@ -86,12 +115,7 @@ const MyProjects = () => {
         </div>
 
         <div className="projects-main">
-          {selectedProject === 'Campus Emergency Response System' && <Cers />}
-          {selectedProject === 'Africana Ecommerce Platform' && <AfricanaEcommerce />}
-          {selectedProject === 'EH Academy Platform' && <EhAcademy />}
-          {selectedProject === 'metaPredict' && <MetaPredict />}
-          {selectedProject === 'Paxful Clone' && <PaxfulClone />}
-          {selectedProject === 'Tech Consultant' && <TechConsultant />}
+          {projectComponents[selectedProject]}
         </div>
       </div>
     </section>
