@@ -506,9 +506,14 @@ a:visited {
 /*--Technical Skills Section--*/
 #skills {
   height: 100vh;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
+.bordered-header {
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+}
 .skills-container {
   display: flex;
   gap: 1rem;
@@ -1716,11 +1721,105 @@ a:visited {
   display: none;
 }
 
+.dropdown-mobile {
+  display: none;
+}
+
+/* Custom dropdown styling */
+.custom-select__control {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: none;
+  min-height: 45px;
+}
+
+.custom-select__menu {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 0.3rem;
+  z-index: 10;
+}
+
+.custom-select__option {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.custom-select__option--is-focused {
+  background-color: #333;
+}
+
+.dropdown-option-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.dropdown-option-wrapper:hover {
+  background-color: #333;
+}
+
+.dropdown-option-icon {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Reuse alternating color classes from sidebar */
+.color-0 {
+  background-color: #fd4312;
+  color: #fff;
+}
+.color-1 {
+  background-color: #008080;
+  color: #fff;
+}
+.color-2 {
+  background-color: #fd4312;
+  color: #fff;
+}
+.color-3 {
+  background-color: #008080;
+  color: #fff;
+}
+
+.dropdown-option-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-option-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  color: #fff;
+}
+
+.dropdown-option-intro {
+  font-size: 0.78rem;
+  color: #bbb;
+  line-height: 1.2;
+}
+
+
+
 /*-- Media Queries --*/
 
 /* Navigation Component */
 
 @media (max-width: 768px) {
+  #home {
+    height: auto;
+  }
   .nav-bar ul {
     display: none;
   }
@@ -1764,21 +1863,23 @@ a:visited {
 
   .gen-title {
     font-size: 1.02rem;
-    margin-top: 1.5rem;
-  }
-
-  .hero-btns {
-    margin-top: 2.5rem;
-  }
-
-  .hero-btns button {
-    padding: 10px 16px;
-    font-size: 0.95rem;
+    margin-top: 2rem;
   }
 
   .hero-tech {
-    margin-top: 2rem;
-    font-size: 0.85rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 5px;
+
+  }
+  .hero-tech span {
+    flex-basis: 19%;
+    margin-right: 0;
+    border: 1px solid #777;
+    padding: 3px 7px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    color: #c2c2c2;
   }
 
   .type-wrap {
@@ -1813,34 +1914,43 @@ a:visited {
   }
 
   .status {
-  display: flex;
-  width: 80%;
-  margin-top: 1rem;
-  padding-bottom: 0.85rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-left: 4px solid #845ef7;
-  border-right: 4px solid #845ef7;
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    padding-bottom: 0.85rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-left: 5px solid #845ef7;
+    border-right: 5px solid #845ef7;
+    border-bottom: 1px solid #845ef7;
+  }
 
+  .zing {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.4px;
+  }
 
-
-.zing {
-  color: #999;
-  margin-top: 2rem;
-  font-size: 1.15rem;
-  letter-spacing: 0.5px;
-}
-
-.hero-btns {
-  margin-top: 3.5rem;
+  .hero-btns {
+    margin-top: 3rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .hero-btns button {
+    flex-basis: 50%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 0;
+    border: none;
+    font-size: 1rem;
 }
   .expertise {
     display: flex;
-    gap: 0.3rem; 
+    gap: 0.2rem; 
   }
 
   .expertise div {
@@ -1851,19 +1961,307 @@ a:visited {
     color: #fff;
     padding: 0 5px 7px 7px;
     border-radius: 0 0 5px 5px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 
   .hv-block {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
 
-.exp-ico {
-  color: #fd4312;
+  .exp-ico {
+    color: #fd4312;
+  }
+
+
+/*-- General section styles --*/
+
+.section-body {
+  padding: 0 0.75rem 0 0.75rem;
 }
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
 }
+
+.section-subtitle {
+  font-size: 0.8rem;
+}
+
+/* About */
+.about-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .about-content-wrapper {
+    flex-direction: column;
+    padding-top: 1.5rem;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .top-performer-card,
+  .secure-code-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .photo-container {
+    flex-basis: auto;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .photo-container img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+
+  .work-st {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    top: 5%;
+    left: 10%;
+  }
+
+  .readme {
+    flex-basis: auto;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .readme p {
+    width: 100%;
+  }
+
+  .pro-name {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .pro-title {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .pro-desc {
+    font-size: 0.82rem;
+    padding: 0.7rem;
+    line-height: 1.5;
+  }
+
+  #underline {
+    margin: 0 auto 1rem auto;
+    width: 100px;
+  }
+}
+
+
+/* Tablet Responsive Styles */
+
+/* AboutMe */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .about-container {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .photo-container img {
+    height: 350px;
+  }
+
+  .readme p {
+    width: 90%;
+  }
+
+  .pro-name {
+    font-size: 1.75rem;
+  }
+
+  .pro-title {
+    font-size: 1.05rem;
+  }
+
+  .pro-desc {
+    font-size: 0.85rem;
+  }
+
+  .top-performer-card,
+  .secure-code-card {
+    font-size: 1rem;
+    padding: 0.9rem 1.3rem;
+  }
+
+  .work-st {
+    font-size: 0.85rem;
+    top: 8%;
+    left: 12%;
+  }
+}
+
+/* ===== Responsive Styles for TechnicalSkills Section ===== */
+
+/*========== Parent: #skills =========*/
+@media (max-width: 1024px) {
+  #skills {
+    height: auto;
+  }
+  .dropdown-mobile {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .skills-sidebar {
+    flex: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    min-height: auto;
+  }
+
+  .skills-main {
+    flex: none;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-tabs {
+    flex-direction: column;
+  }
+  .skills-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+
+  .skills-tab {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .skills-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skills-tab {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+}
+
+  .skills-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills-label p {
+    font-size: 0.78rem;
+  }
+
+  .skills-icon-wrapper {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-tab {
+    font-size: 0.8rem;
+  }
+
+  .skills-item {
+    gap: 0.4rem;
+    padding: 0.6rem;
+  }
+}
+
+/*========== Child Component ========*/
+@media (max-width: 768px) {
+  .component-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .component-header > span {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .cards-hls span {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .techd-component > p {
+    font-size: 0.85rem;
+  }
+
+  .component-overview {
+    font-size: 1rem;
+  }
+
+  .stack-grid {
+    gap: 0.75rem;
+  }
+
+  .stack-card {
+    flex: 0 0 100%;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .stack-icon {
+    font-size: 1.3rem;
+  }
+
+  .stack-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-hls span {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .stack-card {
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+  }
+
+  .stack-icon {
+    font-size: 1.1rem;
+  }
+
+  .stack-name {
+    font-size: 0.85rem;
+  }
+}
+

@@ -127,15 +127,17 @@ function Navigation(){
                         <button className="contact-btn"><BsSend className="btn-icon" /> Get In Touch</button>
                     </div>
 
-                    <p className="hero-tech">
-                        <FaCode className="code-icon" /> Tech Stack:
-                        <span id="f-span">Python</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Django</span>
-                        <span>Node.js</span>
-                        <span>+7 more</span>
-                    </p>
+                    { !isMobile && (
+                        <p className="hero-tech">
+                            <FaCode className="code-icon" /> Tech Stack:
+                            <span id="f-span">Python</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Django</span>
+                            <span>Node.js</span>
+                            <span>+7 more</span>
+                        </p>
+                    )}
                 </div>
 
                 <div className="type-wrap">
@@ -173,21 +175,31 @@ function Navigation(){
                             </div>
                         </div>
                     ) : (
-                        <div className="expertise">
-                            <div className="hv-block">
-                                <FaSoftEng className="exp-ico" size={18} />
-                                <span>Software Engineering</span>
+                        <>
+                            <div className="expertise">
+                                <div className="hv-block">
+                                    <FaSoftEng className="exp-ico" size={18} />
+                                    <span>Software Engineering</span>
+                                </div>
+                                <div className="hv-block">
+                                    <FaUserShield className="exp-ico" size={18} />
+                                    <span>Penetration Testing</span>
+                                </div>
+                                <div className="hv-block">
+                                    <FaTools className="exp-ico" size={18} />
+                                    <span>SOC / Blue Teaming</span>
+                                </div>
+                            
                             </div>
-                            <div className="hv-block">
-                                <FaUserShield className="exp-ico" size={18} />
-                                <span>Penetration Testing</span>
-                            </div>
-                            <div className="hv-block">
-                                <FaTools className="exp-ico" size={18} />
-                                <span>SOC / Blue Teaming</span>
-                            </div>
-                        
-                        </div>
+                            <p className="hero-tech">
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                                <span>React</span>
+                                <span>Django</span>
+                                <span>Node.js</span>
+        
+                            </p>
+                        </>
                     )
                     }
                 </div>
