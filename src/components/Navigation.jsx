@@ -20,7 +20,11 @@ function Navigation(){
     // State to track if the user has scrolled
     const [scrolled, setScrolled] = useState(false);
     const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 768px)").matches);
-    
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(prev => !prev);
+
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -51,6 +55,19 @@ function Navigation(){
         return () => mediaQuery.removeEventListener("change", handleMediaChange);
     }, []);
 
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';   // Prevent background scroll
+        } else {
+            document.body.style.overflow = 'auto';     // Restore scroll
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';     // Cleanup in case component unmounts
+    };
+}, [menuOpen]);
+
+
 
     return(
         <section className="home-section" style={{ backgroundImage: `url(${backgroundImage})` }} id="home">
@@ -58,7 +75,7 @@ function Navigation(){
                 <div className={`nav-bar ${scrolled ? 'scrolled' : ''}`}>
                     <a href="#home"><span id="nav-brand">Leonard Ogendo</span></a>
 
-                    <div className="menu-button"><FaBars /></div>
+                    <div onClick={toggleMenu} className="menu-button"><FaBars /></div>
 
                     <ul>
                         <li>
@@ -105,6 +122,38 @@ function Navigation(){
                         </li>
                     </ul>
                 </div>
+
+                <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+                    <a href="#home" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faHome} className="fa-ico" /></div>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faUser} className="fa-ico" /></div>
+                        <span>About</span>
+                    </a>
+                    <a href="#skills" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faFileAlt} className="fa-ico" /></div>
+                        <span>Skills</span>
+                    </a>
+                    <a href="#experiences" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faProjectDiagram} className="fa-ico" /></div>
+                        <span>Experience</span>
+                    </a>
+                    <a href="#projects" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faLaptopCode} className="fa-ico" /></div>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#certificates" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faStar} className="fa-ico" /></div>
+                        <span>Certificates</span>
+                    </a>
+                    <a href="#contact" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
+                        <span>Contact</span>
+                    </a>
+                </div>
+
             </nav>
 
             <span className="se-tag">Software Engineer Portfolio</span>
