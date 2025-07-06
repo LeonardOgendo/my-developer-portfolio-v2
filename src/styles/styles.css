@@ -1943,8 +1943,7 @@ a:visited {
   }
 
   .gen-title {
-    font-size: 1.02rem;
-    margin-top: 2rem;
+    display: none;
   }
 
   .hero-tech {
