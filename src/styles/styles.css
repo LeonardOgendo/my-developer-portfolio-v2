@@ -368,7 +368,7 @@ a:visited {
 
 .vertical-line {
   width: 20px;
-  background: linear-gradient(to bottom, #fd4312, #845ef7);
+  background: linear-gradient(to bottom, #fd4312, #504478);
   height: 90%;
   margin-top: 1rem;
   min-height: 150px;
@@ -403,7 +403,7 @@ a:visited {
   border-radius: 5px;
   font-size: 0.9rem;
   letter-spacing: 0.7px;
-  border: 1px solid rgba(132, 94, 247, 0.4);
+  border: 1px solid #50447866;
   backdrop-filter: blur(4px);
 }
 .readme {
@@ -432,7 +432,7 @@ a:visited {
   background: rgba(14, 14, 24, 0.92);
   padding: 0.4rem;
   border-radius: 5px;
-  border: 1px solid #845ef7;
+  border: 1px solid #504478;
 }
 
 #underline {
