@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faUser, faFileAlt, faLaptopCode, faStar, faPhone, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
-import { FaCode, FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaHandshake } from 'react-icons/fa';
+import { FaCode, FaBars ,FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaHandshake } from 'react-icons/fa';
 import { BsSend } from 'react-icons/bs';
 import { MdWorkOutline } from 'react-icons/md';
 
@@ -19,6 +19,11 @@ function Navigation(){
 
     // State to track if the user has scrolled
     const [scrolled, setScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 768px)").matches);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(prev => !prev);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,7 +36,37 @@ function Navigation(){
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    }, []);
+
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+        const handleMediaChange = (e) => {
+            setIsMobile(e.matches);
+        };
+
+        // Set initial value
+        setIsMobile(mediaQuery.matches);
+
+        // Listen to changes
+        mediaQuery.addEventListener("change", handleMediaChange);
+
+        return () => mediaQuery.removeEventListener("change", handleMediaChange);
+    }, []);
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';   // Prevent background scroll
+        } else {
+            document.body.style.overflow = 'auto';     // Restore scroll
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';     // Cleanup in case component unmounts
+    };
+}, [menuOpen]);
+
 
 
     return(
@@ -39,6 +74,9 @@ function Navigation(){
             <nav>
                 <div className={`nav-bar ${scrolled ? 'scrolled' : ''}`}>
                     <a href="#home"><span id="nav-brand">Leonard Ogendo</span></a>
+
+                    <div onClick={toggleMenu} className="menu-button"><FaBars /></div>
+
                     <ul>
                         <li>
                             <a href="#home" className="nav-link">
@@ -84,6 +122,38 @@ function Navigation(){
                         </li>
                     </ul>
                 </div>
+
+                <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+                    <a href="#home" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faHome} className="fa-ico" /></div>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faUser} className="fa-ico" /></div>
+                        <span>About</span>
+                    </a>
+                    <a href="#skills" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faFileAlt} className="fa-ico" /></div>
+                        <span>Skills</span>
+                    </a>
+                    <a href="#experiences" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faProjectDiagram} className="fa-ico" /></div>
+                        <span>Experience</span>
+                    </a>
+                    <a href="#projects" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faLaptopCode} className="fa-ico" /></div>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#certificates" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faStar} className="fa-ico" /></div>
+                        <span>Certificates</span>
+                    </a>
+                    <a href="#contact" className="nav-link" onClick={toggleMenu}>
+                        <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
+                        <span>Contact</span>
+                    </a>
+                </div>
+
             </nav>
 
             <span className="se-tag">Software Engineer Portfolio</span>
@@ -106,15 +176,17 @@ function Navigation(){
                         <button className="contact-btn"><BsSend className="btn-icon" /> Get In Touch</button>
                     </div>
 
-                    <p className="hero-tech">
-                        <FaCode className="code-icon" /> Tech Stack:
-                        <span id="f-span">Python</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Django</span>
-                        <span>Node.js</span>
-                        <span>+7 more</span>
-                    </p>
+                    { !isMobile && (
+                        <p className="hero-tech">
+                            <FaCode className="code-icon" /> Tech Stack:
+                            <span id="f-span">Python</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Django</span>
+                            <span>Node.js</span>
+                            <span>+7 more</span>
+                        </p>
+                    )}
                 </div>
 
                 <div className="type-wrap">
@@ -127,29 +199,58 @@ function Navigation(){
                         </div>
                         <div className="gradient-overlay"></div>
                     </div>
-
-                    <div className="expertise">
-                        <div className="hv-block">
-                            <FaSoftEng className="exp-ico" size={18} />
-                            <span>Software Engineering</span>
+                    
+                    {!isMobile ? (
+                        <div className="expertise">
+                            <div className="hv-block">
+                                <FaSoftEng className="exp-ico" size={18} />
+                                <span>Software Engineering</span>
+                            </div>
+                            <div className="hv-block">
+                                <FaShieldAlt className="exp-ico" size={18} />
+                                <span>Web & App Security</span>
+                            </div>
+                            <div className="hv-block">
+                                <FaUserShield className="exp-ico" size={18} />
+                                <span>Penetration Testing</span>
+                            </div>
+                            <div className="hv-block">
+                                <FaTools className="exp-ico" size={18} />
+                                <span>Security Operations</span>
+                            </div>
+                            <div className="hv-block">
+                                <FaTerminal className="exp-ico" size={18} />
+                                <span>Blue Teaming</span>
+                            </div>
                         </div>
-                        <div className="hv-block">
-                            <FaShieldAlt className="exp-ico" size={18} />
-                            <span>Web & App Security</span>
-                        </div>
-                        <div className="hv-block">
-                            <FaUserShield className="exp-ico" size={18} />
-                            <span>Penetration Testing</span>
-                        </div>
-                        <div className="hv-block">
-                            <FaTools className="exp-ico" size={18} />
-                            <span>Security Operations</span>
-                        </div>
-                        <div className="hv-block">
-                            <FaTerminal className="exp-ico" size={18} />
-                            <span>Blue Teaming</span>
-                        </div>
-                    </div>
+                    ) : (
+                        <>
+                            <div className="expertise">
+                                <div className="hv-block">
+                                    <FaSoftEng className="exp-ico" size={18} />
+                                    <span>Software Engineering</span>
+                                </div>
+                                <div className="hv-block">
+                                    <FaUserShield className="exp-ico" size={18} />
+                                    <span>Penetration Testing</span>
+                                </div>
+                                <div className="hv-block">
+                                    <FaTools className="exp-ico" size={18} />
+                                    <span>SOC / Blue Teaming</span>
+                                </div>
+                            
+                            </div>
+                            <p className="hero-tech">
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                                <span>React</span>
+                                <span>Django</span>
+                                <span>Node.js</span>
+        
+                            </p>
+                        </>
+                    )
+                    }
                 </div>
             </div>
         </section>

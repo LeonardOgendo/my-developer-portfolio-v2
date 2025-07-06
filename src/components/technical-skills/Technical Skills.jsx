@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Select from "react-select";
 import { FaCode, FaCubes, FaServer, FaCloud, FaDatabase, FaVial, FaWpforms, FaTerminal, FaLinux, FaBug, FaShieldAlt, FaLock } from "react-icons/fa";
 
 import SLanguages from "./categories/software/Languages";
@@ -15,7 +16,60 @@ import PenetrationTesting from "./categories/cybersecurity/PenTesting";
 import SecurityOperations from "./categories/cybersecurity/SecurityOperations";
 import ApplicationSecurity from "./categories/cybersecurity/ApplicationSecurity";
 
+
 const TechnicalSkills = () => {
+    
+    const customStyles = {
+  control: (base) => ({
+    ...base,
+    backgroundColor: "#1c1c1c",
+    border: "1px solid #444",
+    borderRadius: "8px",
+    minHeight: "45px",
+    boxShadow: "none",
+    color: "#fff",
+  }),
+  menu: (base) => ({
+    ...base,
+    backgroundColor: "#2a2a2a",
+    borderRadius: "8px",
+    padding: "0.3rem",
+    zIndex: 10,
+  }),
+  option: (base, state) => ({
+    ...base,
+    backgroundColor: state.isFocused ? "#333" : "transparent",
+    color: "#fff",
+    cursor: "pointer",
+  }),
+  singleValue: (base) => ({
+    ...base,
+    color: "#fff",
+  }),
+  placeholder: (base) => ({
+    ...base,
+    color: "#bbb",
+  }),
+  input: (base) => ({
+    ...base,
+    color: "#fff",
+  }),
+  valueContainer: (base) => ({
+    ...base,
+    backgroundColor: "#1c1c1c",
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: "#fd4312",
+  }),
+  indicatorSeparator: () => ({
+    display: "none",
+  }),
+};
+
+
+
+
     const sidebarItems = {
         software: [
             { title: "Languages", icon: <FaCode />, intro: "Python, JavaScript, more" },
@@ -38,24 +92,78 @@ const TechnicalSkills = () => {
     const [activeTab, setActiveTab] = useState("software");
     const [activeCategory, setActiveCategory] = useState(sidebarItems.software[0].title);
 
+    const [selectedOption, setSelectedOption] = useState({
+       label: (
+        <div className="dropdown-option-wrapper" >
+            <div className="dropdown-option-icon color-0">{sidebarItems[activeTab][0].icon}</div>
+            <div className="dropdown-option-label">
+                <div className="dropdown-option-title">{sidebarItems[activeTab][0].title}</div>
+                <div className="dropdown-option-intro">{sidebarItems[activeTab][0].intro}</div>
+            </div>
+        </div>
+    ),
+    value: sidebarItems[activeTab][0].title,
+    });
+
+    
+
+
     const handleTabClick = (tab) => {
+        const firstTabCategory = sidebarItems[tab][0];
         setActiveTab(tab);
-        setActiveCategory(sidebarItems[tab][0].title);
+        setActiveCategory(firstTabCategory.title);
+
+        setSelectedOption({
+            label: (
+        <div className="dropdown-option-wrapper">
+            <div className="dropdown-option-icon color-0">{firstTabCategory.icon}</div>
+            <div className="dropdown-option-label">
+                <div className="dropdown-option-title">{firstTabCategory.title}</div>
+                <div className="dropdown-option-intro">{firstTabCategory.intro}</div>
+            </div>
+        </div>
+    ),
+    value: firstTabCategory.title,
+        });
     };
 
     const handleCategoryClick = (category) => {
         setActiveCategory(category);
     };
 
+    // ✅ Dropdown Options with JSX rendering
+   const dropdownOptions = sidebarItems[activeTab].map((item, index) => ({
+    label: (
+        <div className="dropdown-option-wrapper">
+            <div className={`dropdown-option-icon color-${index % 4}`}>{item.icon}</div>
+            <div className="dropdown-option-label">
+                <div className="dropdown-option-title">{item.title}</div>
+                <div className="dropdown-option-intro">{item.intro}</div>
+            </div>
+        </div>
+    ),
+    value: item.title,
+}));
+
+
+    const handleDropdownChange = (selectedOption) => {
+        if (selectedOption) {
+            setSelectedOption(selectedOption);
+            setActiveCategory(selectedOption.value);
+        }
+    };
+
     return (
         <section className="section-body" id="skills">
-            <h2 className="section-title">
-                <span style={{ color: "#fff" }}>Technical</span>{" "}
-                <span style={{ color: "#fd4312" }}>Skills</span>
-            </h2>
-            <p className="section-subtitle">
-                My proficiency in the following technologies and tools.
-            </p>
+            <div className="bordered-header">
+                <h2 className="section-title">
+                    <span style={{ color: "#fff" }}>Technical</span>{" "}
+                    <span style={{ color: "#fd4312" }}>Skills</span>
+                </h2>
+                <p className="section-subtitle">
+                    My proficiency in the following technologies and tools.
+                </p>
+            </div>
 
             <div className="skills-container">
                 <div className="skills-sidebar">
@@ -74,7 +182,20 @@ const TechnicalSkills = () => {
                         </button>
                     </div>
 
-                    <div className="skills-categories">
+                    {/* 🔁 Responsive: react-select dropdown on small screens */}
+                    <div className="dropdown-mobile">
+                        <Select
+                            options={dropdownOptions}
+                            value={selectedOption}
+                            onChange={handleDropdownChange}
+                            isSearchable={false}
+                            styles={customStyles}
+        
+                        />
+                    </div>
+
+                    {/* 🖥️ Only show full sidebar items on desktop */}
+                    <div className="skills-categories desktop-only">
                         {sidebarItems[activeTab].map((item, index) => (
                             <div
                                 className="skills-item"

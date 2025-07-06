@@ -96,7 +96,7 @@ const Contact = () => {
         </div>
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <h4>Mail Me</h4>
+          <h4>Send Email</h4>
 
           <input type="text" name="name" placeholder="Your Name" required />
           <input

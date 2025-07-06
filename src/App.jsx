@@ -13,21 +13,12 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [recentlyNavigated, setRecentlyNavigated] = useState(false);
 
     const skillsRef = useRef(null);
     const experienceRef = useRef(null);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 1024);
-        };
 
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
 
     useEffect(() => {
         const options = {
@@ -65,28 +56,7 @@ function App() {
         return () => window.removeEventListener('hashchange', handleHashChange);
     }, []);
 
-    if (isSmallScreen) {
-        return (
-            <div style={{
-                height: '100vh',
-                display: 'flex',
-                justifyContent: 'center',
-                paddingTop: '40%',
-                padding: '2rem',
-                textAlign: 'center',
-                backgroundColor: '#222',
-            }}>
-                <p style={{ fontSize: '1.5rem', maxWidth: '500px', color: '#fff' }}>
-                    This portfolio is Currently optimized for larger screens<br />
-                    <br />
-                    <hr />
-                    <br />
-                    Please view it on a laptop or desktop for the best experience.
-                </p>
-            </div>
-        );
-    }
-
+    
     return (
         <div className="App">
             <Navigation />

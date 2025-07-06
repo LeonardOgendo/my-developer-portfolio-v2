@@ -1,11 +1,11 @@
-import { act, useState } from "react";
+import { useEffect, useState } from "react";
 import CurrentRole from "./categories/CurrentRole";
 import PreviousExperiences from "./categories/PreviousExperiences";
 import { FaStar } from "react-icons/fa";
 
 
 const Experiences = () => {
-
+    
     const [activeToggle, setActiveToggle] = useState("current-role");
 
     const handleToggleClick = (toggle) => {
@@ -13,17 +13,18 @@ const Experiences = () => {
     };
 
 
-
     return (
         <section className="section-body" id="experiences">
-            <h2 className="section-title">
-                <span style={{ color: "#fff" }}>My</span>{" "}
-                <span style={{ color: "#fd4312" }}>Experiences</span>
-            </h2>
+            <div className="bordered-header">
+                <h2 className="section-title">
+                    <span style={{ color: "#fff" }}>My</span>{" "}
+                    <span style={{ color: "#fd4312" }}>Experiences</span>
+                </h2>
 
-            <p className="section-subtitle">
-                Roles I've held and experiences that have shaped my professional journey.
-            </p>
+                <p className="section-subtitle">
+                    Roles I've held and experiences that have shaped my professional journey.
+                </p>
+            </div>
 
             <div className="experiences-hls">
                 <div className="experience-toggles">
