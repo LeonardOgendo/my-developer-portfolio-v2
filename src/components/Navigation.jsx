@@ -158,7 +158,7 @@ function Navigation(){
 
             </nav>
 
-            <span className="se-tag">Software Engineer Portfolio</span>
+            {!menuOpen && <span className="se-tag">Software Engineer Portfolio</span>}
 
             <div className="hero">
                 <div className="intro">
