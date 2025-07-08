@@ -1889,6 +1889,9 @@ a:visited {
 
 @media (max-width: 768px) {
 
+  html, body {
+    overflow-x: hidden !important;
+  }
   #home {
     height: auto;
   }
@@ -1910,12 +1913,12 @@ a:visited {
 
   .nav-bar.scrolled {
     border-radius: 7px;
-    padding: 18px 5px;
-    top: 1.25rem;
+    padding: 18px 10px 18px 5px;
+    top: 0.85rem;
     left: 0;
     right: 0;
     margin: 0 auto;
-    max-width: 95vw;
+    max-width: 97vw;
     background: rgba(14, 14, 24, 0.92);
 }
 
@@ -2648,7 +2651,7 @@ a:visited {
 
 
 /*- Certifications Section -*/
-@media screen and (max-width: 641px) {
+@media (max-width: 641px) {
   #certificates {
     height: auto;
     padding: 0.75rem;
@@ -2680,7 +2683,9 @@ a:visited {
     font-size: 0.95rem;
     padding: 0.3rem 0.5rem;
   }
-
+  .cert-image-container {
+    object-fit: ;
+  }
   .cert-image {
     max-height: 40vh;
   }
@@ -2714,7 +2719,7 @@ a:visited {
 /* ------------------------------
    💻 Tablet Screens: Max 1024px
 -------------------------------*/
-@media screen and (min-width: 641px) and (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 642px) {
   .certificates-section {
     padding: 1.5rem;
   }
@@ -2733,6 +2738,7 @@ a:visited {
     gap: 1rem;
     padding: 1rem;
     flex-direction: row;
+    width: 100%;
   }
 
   .cert-title {
@@ -2766,7 +2772,7 @@ a:visited {
 /* ------------------------------
    📱 Mobile Screens: Max 640px
 -------------------------------*/
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 641px) {
   .contact-section {
     padding: 1rem;
   }

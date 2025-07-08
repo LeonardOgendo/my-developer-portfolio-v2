@@ -79,7 +79,7 @@ const Contact = () => {
               <FaGithub className="network-icon" />
               <span className="network-label">GitHub</span>
             </a>
-            <p className="network-stats">25+ Public Repositories</p>
+            <p className="network-stats">35+ Public Repositories</p>
           </div>
 
           <div className="network-card">

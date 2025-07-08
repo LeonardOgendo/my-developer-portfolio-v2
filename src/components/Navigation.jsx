@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faUser, faFileAlt, faLaptopCode, faStar, faPhone, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
-import { FaCode, FaBars ,FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaHandshake } from 'react-icons/fa';
+import { FaCode, FaBars ,FaDotCircle, FaUserShield, FaTools, FaLaptopCode as FaSoftEng, FaShieldAlt, FaTerminal, FaTimes } from 'react-icons/fa';
 import { BsSend } from 'react-icons/bs';
-import { MdWorkOutline } from 'react-icons/md';
+
 
 import TypewriterEffect from "./TypewriterEffect";
 import backgroundVideo from "../assets/video/backgroundplay.mp4";
@@ -75,7 +75,9 @@ function Navigation(){
                 <div className={`nav-bar ${scrolled ? 'scrolled' : ''}`}>
                     <a href="#home"><span id="nav-brand">Leonard Ogendo</span></a>
 
-                    <div onClick={toggleMenu} className="menu-button"><FaBars /></div>
+                    <div onClick={toggleMenu} className="menu-button">
+                        {menuOpen ? <FaTimes /> : <FaBars />}
+                    </div>
 
                     <ul>
                         <li>
