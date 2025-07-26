@@ -147,7 +147,7 @@ const MyProjects = () => {
         </div>
 
         <div className="projects-right">
-          {!isMobile ? <p className="projects-count">35+ <br /> GitHub Repos</p> : <p className="projects-count">35+ Repos</p>}
+          {!isMobile ? <p className="projects-count">40+ <br /> GitHub Repos</p> : <p className="projects-count">40+ Repos</p>}
           <a href="https://github.com/LeonardOgendo/" target="_blank" rel="noopener noreferrer" className="github-button">
             <FaGithub /> See GitHub
           </a>

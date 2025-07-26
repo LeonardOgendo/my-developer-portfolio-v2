@@ -6,6 +6,8 @@ import ciscoLogo from '../assets/certsxprojects/cisco-logo.png';
 import freeCodeLogo from '../assets/certsxprojects/freecodecamp-logo.png';
 
 import ecCouncilCB from '../assets/certsxprojects/csec-business.png';
+import freeCodeInfosec from '../assets/certsxprojects/fcc_infosec.png';
+import freeCodeBackend from '../assets/certsxprojects/freecodebackend_dev.png';
 import freeCodeFdl from '../assets/certsxprojects/freecodecamp-fdl.png';
 import netAcadP from '../assets/certsxprojects/participation-netacad.png';
 import ciscoEH from '../assets/certsxprojects/cisco-eh-acad.jpg';
@@ -23,6 +25,27 @@ const certData = [
     ],
     'link': "https://learn.eccouncil.org/certificate/abfc6a0f-7b40-444f-ac1f-3b373f6f0aab?"
   },
+
+  {
+    'orgLogo': freeCodeLogo,
+    'orgName': "freeCodeCamp",
+    'title': "Information Security",
+    'certImg': freeCodeInfosec,
+    'overview': "Information Security Curriculum by freeCodeCamp demonstrates hands on experience in securing web applications especially Node.js apps, alongside scripting using Python",
+    'skills': ["Web Application Security", "Scripting (Python)"],
+    
+  },
+
+  {
+    'orgLogo': freeCodeLogo,
+    'orgName': "freeCodeCamp",
+    'title': "Backend Development & APIs",
+    'certImg': freeCodeBackend,
+    'overview': "Backend Development & APIs by freeCodeCamp demonstrates hands on experience in building microservices using Node.js and Express.js",
+    'skills': ["Node.js", "Express.js", "MongoDB", "API design", "API Integration"],
+
+  },
+
   {
     'orgLogo': freeCodeLogo,
     'orgName': "freeCodeCamp",
@@ -92,7 +115,7 @@ const Certificates = () => {
         </div>
         <div className="cert-stats">
           <h3>Verified Credentials</h3>
-          <p>5+ Certifications</p>
+          <p>7+ Certifications</p>
         </div>
       </div>
 
