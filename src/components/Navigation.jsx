@@ -164,7 +164,7 @@ function Navigation(){
                 <div className="intro">
                     <p className="name">Leonard Ogendo</p>
 
-                    <p className="gen-title">Junior Secure Software & Cybersecurity Engineer</p>
+                    <p className="gen-title">Secure Software Engineer & Cybersecurity Professional</p>
                     
                     <div className="status">
                         <FaDotCircle className="status-dot" /> 
