@@ -33,7 +33,7 @@ const certData = [
     'certImg': freeCodeInfosec,
     'overview': "Information Security Curriculum by freeCodeCamp demonstrates hands on experience in securing web applications especially Node.js apps, alongside scripting using Python",
     'skills': ["Web Application Security", "Scripting (Python)"],
-    
+    'link': "https://www.freecodecamp.org/certification/Leonard101/information-security-v7"
   },
 
   {
@@ -43,7 +43,7 @@ const certData = [
     'certImg': freeCodeBackend,
     'overview': "Backend Development & APIs by freeCodeCamp demonstrates hands on experience in building microservices using Node.js and Express.js",
     'skills': ["Node.js", "Express.js", "MongoDB", "API design", "API Integration"],
-
+    'link': "https://freecodecamp.org/certification/Leonard101/back-end-development-and-apis"
   },
 
   {
