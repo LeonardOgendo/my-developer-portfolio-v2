@@ -54,6 +54,7 @@ nav a {
   border-radius: 7px 7px 7px 0;
 }
 
+
 nav {
   z-index: 999;
 }
@@ -68,7 +69,7 @@ nav {
 .nav-bar.scrolled {
   position: fixed;
   border-radius: 7px;
-  padding: 24px 5px;
+  padding: 22px 5px;
   top: 1rem;
   left: 0;
   right: 0;
@@ -103,7 +104,18 @@ nav {
 .nav-bar ul li {
   display: inline-block;
   list-style: none;
-  margin-right: 40px;
+  margin-right: 30px;
+}
+
+#download-cv {
+  background: #fd4312;
+  padding: 4px 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.nav-bar ul li:last-child {
+  margin-right: 0;
 }
 
 .nav-link {
@@ -130,6 +142,15 @@ a:visited {
   display: inline-block;
   margin-top: 4px;
   font-weight: 500;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 .code-icon {
@@ -217,6 +238,7 @@ a:visited {
   font-size: 1rem;
   background: linear-gradient(to right, #fd4312, #3a232b, #504478);
   color: #fff;
+  cursor: pointer;
 }
 
 .hero-tech {
@@ -412,7 +434,7 @@ a:visited {
   flex-basis: 50%;
 }
 .readme p {
-  width: 77%;
+  width: 80%;
 }
 .pro-name {
   font-size: 2rem;
