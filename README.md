@@ -1,6 +1,6 @@
 
 
-##  Leonard Ogendo | Secure Software Engineer & Cybersecurity Specialist Portfolio  
+##  MY PORTFOLIO
 
 ![Portfolio Preview](./src/assets/portfolio-user.png)  
 
