@@ -1,9 +1,11 @@
-import { SiPostgresql, SiMongodb } from 'react-icons/si';
+import { SiPostgresql, SiMongodb, SiMysql } from 'react-icons/si';
 
 const Databases = () => {
     const databases = [
         { name: 'PostgreSQL', icon: <SiPostgresql /> },
-        { name: 'MongoDB', icon: <SiMongodb /> }
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'MySQL', icon: <SiMysql /> }
+
     ];
 
     return (
@@ -16,7 +18,7 @@ const Databases = () => {
             <p>Databases I use in full-stack applications for structured and unstructured data management.</p>
 
             <p className='cards-hls'>
-                <span>PostgreSQL</span> <span>MongoDB</span>
+                <span>PostgreSQL</span> <span>MySQL</span> <span>MongoDB</span>
             </p>
 
             <hr className='component-divider' />

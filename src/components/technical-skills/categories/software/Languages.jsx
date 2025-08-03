@@ -1,5 +1,5 @@
 
-import { FaPython, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaPython, FaPhp, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiMysql } from 'react-icons/si';
 
 const SLanguages = () => {
@@ -7,6 +7,7 @@ const SLanguages = () => {
     const languages = [
         { name: 'Python', icon: <FaPython /> },
         { name: 'JavaScript (ES6+)', icon: <FaJs /> },
+        { name: 'PHP', icon: <FaPhp /> },
         { name: 'HTML5', icon: <FaHtml5 /> },
         { name: 'CSS3', icon: <FaCss3Alt /> },
         { name: 'SQL', icon: <SiMysql /> }
@@ -21,7 +22,7 @@ const SLanguages = () => {
             
             <p>Core programming and markup languages</p>
 
-            <p className='cards-hls'><span>Python</span>  <span>JavaScript</span>   <span>HTML5</span>   <span>CSS3</span>   <span>SQL</span></p>
+            <p className='cards-hls'><span>Python</span>  <span>JavaScript</span>   <span>PHP</span>   <span>HTML5</span>   <span>CSS3</span>   <span>SQL</span></p>
 
             <hr className='component-divider' />
 

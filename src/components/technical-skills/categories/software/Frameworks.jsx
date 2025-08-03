@@ -1,15 +1,16 @@
-import { FaReact, FaBootstrap, FaNodeJs } from 'react-icons/fa';
-import { SiNextdotjs, SiExpress, SiDjango, SiFastapi, SiTailwindcss } from 'react-icons/si';
-import { TbApi } from 'react-icons/tb';
+import { FaReact, FaBootstrap, FaNodeJs, FaLaravel } from 'react-icons/fa';
+import { SiNextdotjs, SiVuedotjs, SiExpress, SiDjango, SiFastapi, SiTailwindcss } from 'react-icons/si';
+
 
 const Frameworks = () => {
     const frameworks = [
         { name: 'React', icon: <FaReact /> },
+        { name: 'Vue.js', icon: <SiVuedotjs /> },
         { name: 'Next.js', icon: <SiNextdotjs /> },
         { name: 'Node.js', icon: <FaNodeJs /> },
         { name: 'Express.js', icon: <SiExpress /> },
-        { name: 'Django', icon: <SiDjango /> },
-        { name: 'Django REST Framework (DRF)', icon: <TbApi /> },
+        { name: 'Django (DRF)', icon: <SiDjango /> },
+        { name: 'Laravel (PHP)', icon: <FaLaravel /> },
         { name: 'FastAPI', icon: <SiFastapi /> },
         { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
         { name: 'Bootstrap5', icon: <FaBootstrap /> }
@@ -25,7 +26,7 @@ const Frameworks = () => {
             <p>Tools that streamline application development and styling.</p>
 
             <p className='cards-hls'>
-                <span>React</span> <span>Next.js</span> <span>Node.js</span> <span>Express.js</span> <span>Django</span> <span>DRF</span> <span>FastAPI</span> <span>Tailwind CSS</span> <span>Bootstrap</span>
+                <span>React</span> <span>Vue.js</span> <span>Next.js</span> <span>Node.js</span> <span>Express.js</span> <span>Django (DRF)</span> <span>FastAPI</span> <span>Laravel (PHP)</span> <span>Tailwind CSS</span> <span>Bootstrap</span>
             </p>
 
             <hr className='component-divider' />
