@@ -126,4 +126,4 @@ npm run dev
 ### ⭐ Acknowledgements
 This portfolio was built from scratch to demonstrate real-world front-end craftsmanship using `React` + `CSS`, intentionally avoiding heavy UI libraries to highlight raw coding skills.  
 
-If you like this portfolio, consider leaving a ⭐ on the repo! ORconsider leaving a ⭐ on the repo — or let's connect and build something amazing together!
+If you like this portfolio, consider leaving a ⭐ on the repo! OR let's connect and build something amazing together!
