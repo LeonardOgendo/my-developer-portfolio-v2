@@ -13,9 +13,13 @@ function Navigation(){
     const texts = [
         "I Am Leonard Ogendo",
         'I Am a Secure Software Engineer',
-        'I Am a Cybersecurity Engineer',
+        'I Am a Cybersecurity Specialist',
         'I Am a Penetration Tester'
     ];
+    
+    // State to track portfolio tag
+    const [isSoftware, setIsSoftware] = useState(true);
+    const [fade, setFade] = useState(true);
 
     // State to track if the user has scrolled
     const [scrolled, setScrolled] = useState(false);
@@ -65,7 +69,23 @@ function Navigation(){
         return () => {
             document.body.style.overflow = 'auto';     // Cleanup in case component unmounts
     };
-}, [menuOpen]);
+    }, [menuOpen]);
+
+
+    // State to toggle Portfolio tag
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(false); // Start fading out
+            setTimeout(() => {
+                setIsSoftware((prev) => !prev);
+                setFade(true); // Start fading in
+            }, 1000);
+        }, 3500); 
+
+        return () => clearInterval(interval); 
+    }, []);
+
+
 
 
 
@@ -122,6 +142,11 @@ function Navigation(){
                                 <div className="name-box"><span>Contact</span></div>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://drive.google.com/file/d/1Cy46WQCrpm-0v2eoX1MY4qURjsAD4J0g/view?usp=sharing" target="_blank" rel="noreferrer" id="download-cv" className="nav-link">
+                                <span>Download CV</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -154,28 +179,35 @@ function Navigation(){
                         <div className="ico-box"><FontAwesomeIcon icon={faPhone} className="fa-ico" /></div>
                         <span>Contact</span>
                     </a>
+                    
+            
                 </div>
 
             </nav>
 
-            {!menuOpen && <span className="se-tag">Software Engineer Portfolio</span>}
+            {/* Portfolio tag */}
+            {!menuOpen && (
+                <span className={`se-tag ${fade ? 'fade-in' : 'fade-out'}`}>
+                    {isSoftware ? "Software Engineer Portfolio" : "Cybersecurity Specialist Portfolio"}
+                </span>
+            )}
 
             <div className="hero">
                 <div className="intro">
                     <p className="name">Leonard Ogendo</p>
 
-                    <p className="gen-title">Secure Software Engineer & Cybersecurity Professional</p>
+                    <p className="gen-title">Secure Software Engineer & Cybersecurity Specialist</p>
                     
                     <div className="status">
                         <FaDotCircle className="status-dot" /> 
                         <p className="c-at"> Currently Freelancing</p>
                     </div>
 
-                    <p className="zing">Helping Organizations Build Secure Systems and Protect Digital Assets.</p>
+                    <p className="zing">Helping Organizations Build Secure Systems and Protect Digital Assets & Critical Infrastructure</p>
 
                     <div className="hero-btns">
-                        <button className="view-btn"><FaCode className="btn-icon" /> View My Work</button>
-                        <button className="contact-btn"><BsSend className="btn-icon" /> Get In Touch</button>
+                        <a href="#projects"><button className="view-btn"><FaCode className="btn-icon" /> View My Work</button></a>
+                        <a href="#contact"><button className="contact-btn"><BsSend className="btn-icon" /> Get In Touch</button></a>
                     </div>
 
                     { !isMobile && (
