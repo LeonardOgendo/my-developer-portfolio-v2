@@ -6,6 +6,7 @@ import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
 const Contact = () => {
   const form = useRef();
 
+  // No need for secrets here, left intentionally, Just don't use my EmailJS keys 😂
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
